@@ -1,0 +1,542 @@
+[
+  {
+    "day": 1,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0484_Base de dades",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0373_Llenguatge de marques",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0373_Llenguatge de marques",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "0373_Llenguatge de marques",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0179_Anglès professional",
+    "groupId": "DAM1",
+    "teacherId": "AMPARO",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0484_Base de dades",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0483_Sistemes informàtics",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "0483_Sistemes informàtics",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0487_Entorns de desenvolupament",
+    "groupId": "DAM1",
+    "teacherId": "IVAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0487_Entorns de desenvolupament",
+    "groupId": "DAM1",
+    "teacherId": "IVAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0487_Entorns de desenvolupament",
+    "groupId": "DAM1",
+    "teacherId": "IVAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0483_Sistemes informàtics",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "0483_Sistemes informàtics",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0179_Anglès professional",
+    "groupId": "DAM1",
+    "teacherId": "AMPARO",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0484_Base de dades",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0484_Base de dades",
+    "groupId": "DAM1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "1709_IPO I",
+    "groupId": "DAM1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "1709_IPO I",
+    "groupId": "DAM1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "1709_IPO I",
+    "groupId": "DAM1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "Activitat centre",
+    "groupId": "DAM1",
+    "teacherId": "CENTRE",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "Activitat centre",
+    "groupId": "DAM1",
+    "teacherId": "CENTRE",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0485_Programació",
+    "groupId": "DAM1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "Tutoria",
+    "groupId": "DAM1",
+    "teacherId": "TUTOR_DAM1",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0221. Muntatge i manteniment d'equips.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0221. Muntatge i manteniment d'equips.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "1664. Digitalització.",
+    "groupId": "SMX1",
+    "teacherId": "JAVIER",
+    "room": ""
+  },
+  {
+    "day": 1,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "1664. Digitalització.",
+    "groupId": "SMX1",
+    "teacherId": "JAVIER",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0223. Aplicacions ofimàtiques.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0156. Anglès professional",
+    "groupId": "SMX1",
+    "teacherId": "AMPARO",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0221. Muntatge i manteniment d'equips.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0221. Muntatge i manteniment d'equips.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 2,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0223. Aplicacions ofimàtiques.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0223. Aplicacions ofimàtiques.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0225. Xarxes locals",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "0225. Xarxes locals",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 3,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "0222. Sistemes operatius monolloc.",
+    "groupId": "SMX1",
+    "teacherId": "NACHO",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0223. Aplicacions ofimàtiques.",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0156. Anglès professional",
+    "groupId": "SMX1",
+    "teacherId": "AMPARO",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "Tutoria",
+    "groupId": "SMX1",
+    "teacherId": "TUTOR_SMX1",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "1709_IPO I",
+    "groupId": "SMX1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "1709_IPO I",
+    "groupId": "SMX1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 4,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "1709_IPO I",
+    "groupId": "SMX1",
+    "teacherId": "BEA",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "08:30",
+    "end": "09:25",
+    "subject": "0225. Xarxes locals",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "09:25",
+    "end": "10:20",
+    "subject": "0225. Xarxes locals",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "10:20",
+    "end": "11:15",
+    "subject": "0225. Xarxes locals",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "11:45",
+    "end": "12:40",
+    "subject": "Mòdul professional optatiu: Robòtica i Prog. Python",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "12:40",
+    "end": "13:35",
+    "subject": "Mòdul professional optatiu: Robòtica i Prog. Python",
+    "groupId": "SMX1",
+    "teacherId": "JOAN",
+    "room": ""
+  },
+  {
+    "day": 5,
+    "start": "13:35",
+    "end": "14:30",
+    "subject": "Activitat centre",
+    "groupId": "SMX1",
+    "teacherId": "CENTRE",
+    "room": ""
+  }
+]

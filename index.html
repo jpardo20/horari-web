@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horari</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    .picker { display:flex; gap:16px; align-items:center; margin-bottom:16px; flex-wrap: wrap; }
+    .grid { display: grid; gap: 6px; }
+    .grid .cell, .grid .hdr { border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+    .hdr { background: #f5f5f5; font-weight: 650; text-align: center; }
+    .muted { color:#666; font-size: 0.9em; }
+    .legend { margin-top: 12px; color:#444; font-size: 0.9em;}
+    .controls { display:flex; gap:12px; align-items:center; }
+    .buttons { display:flex; gap:8px; }
+    .btn { padding:8px 12px; border:1px solid #ddd; border-radius:8px; background:#fff; cursor:pointer; }
+    .btn.selected { background:#111; color:#fff; border-color:#111; }
+    #schedule { margin-top: 20px; }
+    .pill { font-size: 0.75rem; padding: 2px 6px; border-radius: 9999px; border: 1px solid rgba(0,0,0,.08); background:#fff6; display:inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Horari</h1>
+
+  <div class="picker">
+    <div class="buttons" id="modeButtons">
+      <button class="btn selected" data-mode="class">Per classe</button>
+      <button class="btn" data-mode="teacher">Per professor</button>
+    </div>
+
+    <div class="controls">
+      <label id="selectLabel" for="entitySelect">Classe:</label>
+      <select id="entitySelect"></select>
+      <button class="btn" id="renderBtn">Mostra</button>
+    </div>
+  </div>
+
+  <div id="schedule"></div>
+  <div class="legend muted">
+    Consell: mantén <code>sessions.json</code> com a font única i edita només aquest fitxer.
+    Els colors provenen de <code>colors.json</code> (clau: <em>subject</em>).
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
