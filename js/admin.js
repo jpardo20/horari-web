@@ -157,6 +157,8 @@ function render(){
   // show last validation state (optional)
   const warnings = validateOverlaps(list);
   showWarnings(warnings, /*silent=*/true);
+  applyInlineWarnings(warnings, list);
+
 }
 
 function rowHtml(s){
@@ -168,7 +170,7 @@ function rowHtml(s){
     <td>${selectClass(s.groupId)}</td>
     <td>${selectTeacher(s.teacherId)}</td>
     <td><input type="text" value="${escapeHtml(s.room||"")}" data-field="room" placeholder="Aula"></td>
-    <td class="nowrap"><button class="btn dup" title="Duplica">Duplica</button> <button class="btn del" title="Elimina">Elimina</button></td>
+    <td class="nowrap"><button class="iconbtn dup" title="Duplica" aria-label="Duplica"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v12h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button> <button class="iconbtn del" title="Elimina" aria-label="Elimina"><svg class="icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7zm3-3h6l1 1h4v2H4V5h4l1-1z"/></svg></button></td>
   </tr>`;
 }
 
@@ -347,3 +349,51 @@ function showWarnings(warnings, silent=false){
 }
 
 function dayName(d){ return DAYS.find(x=>x.id===Number(d))?.name || String(d); }
+
+
+function applyInlineWarnings(warnings, list){
+  // Clear previous marks
+  els.tableBody.querySelectorAll('td.err').forEach(td=> td.classList.remove('err'));
+
+  // Map: row index in current filtered list -> <tr>
+  const rows = Array.from(els.tableBody.querySelectorAll('tr'));
+
+  // Utility: mark a cell by (row, col)
+  function mark(rowIdx, colIdx){
+    const tr = rows[rowIdx];
+    if (!tr) return;
+    const td = tr.children[colIdx];
+    if (!td) return;
+    td.classList.add('err');
+  }
+
+  // Column indices: 0=Dia, 1=Inici, 2=Fi, 3=Assignatura, 4=Classe, 5=Professor/a, 6=Aula, 7=Accions
+  for (const w of warnings){
+    if (w.type === "group"){
+      const a = w.a.__line ?? w.a.__idx ?? null;
+      const b = w.b.__line ?? w.b.__idx ?? null;
+      if (a!=null){ mark(a,1); mark(a,2); mark(a,4); }
+      if (b!=null){ mark(b,1); mark(b,2); mark(b,4); }
+    }else if (w.type === "teacher"){
+      const a = w.a.__line ?? w.a.__idx ?? null;
+      const b = w.b.__line ?? w.b.__idx ?? null;
+      if (a!=null){ mark(a,1); mark(a,2); mark(a,5); }
+      if (b!=null){ mark(b,1); mark(b,2); mark(b,5); }
+    }else if (w.type === "invalid-time"){
+      const a = w.s.__line ?? w.s.__idx ?? null;
+      if (a!=null){ mark(a,1); mark(a,2); }
+    }else if (w.type === "invalid-day"){
+      const a = w.s.__line ?? w.s.__idx ?? null;
+      if (a!=null){ mark(a,0); }
+    }else if (w.type === "unknown-class"){
+      const a = w.s.__line ?? w.s.__idx ?? null;
+      if (a!=null){ mark(a,4); }
+    }else if (w.type === "unknown-teacher"){
+      const a = w.s.__line ?? w.s.__idx ?? null;
+      if (a!=null){ mark(a,5); }
+    }else if (w.type === "empty-subject"){
+      const a = w.s.__line ?? w.s.__idx ?? null;
+      if (a!=null){ mark(a,3); }
+    }
+  }
+}

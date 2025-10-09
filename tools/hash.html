@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>SHA-256 hash tool</title>
+<style>body{font-family:system-ui;margin:24px} input,button{font-size:1rem;padding:8px} code{background:#f5f5f5;padding:2px 6px;border-radius:6px}</style>
+<h1>Genera el hash SHA-256 per a la clau d'accés</h1>
+<p>Escriu la teva clau i copia el resultat per enganxar-lo a <code>ADMIN_HASH</code> dins <code>admin.html</code>.</p>
+<input id="in" type="password" placeholder="Entra la clau" style="width: min(480px, 100%)">
+<button id="go">Calcula</button>
+<p>Hash (hex): <code id="out"></code></p>
+<script>
+async function sha256Hex(str){
+  const enc = new TextEncoder().encode(str);
+  const buf = await crypto.subtle.digest('SHA-256', enc);
+  document.getElementById('out').textContent =
+    Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+document.getElementById('go').addEventListener('click', ()=> sha256Hex(document.getElementById('in').value||''));
+</script>

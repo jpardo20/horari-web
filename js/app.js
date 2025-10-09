@@ -19,6 +19,7 @@ modeButtons.addEventListener("click", (e) => {
   btn.classList.add("selected");
   MODE = btn.dataset.mode;
   refreshSelect();
+  autoRenderFromParams();
 });
 
 renderBtn.addEventListener("click", () => {
@@ -28,6 +29,7 @@ renderBtn.addEventListener("click", () => {
   renderSchedule(filtered);
 });
 
+const PARAMS = new URLSearchParams(location.search);
 (async function init() {
   [classes, professors, sessions, subjectColors] = await Promise.all([
     fetch("data/classes.json").then(r=>r.json()),
@@ -36,6 +38,7 @@ renderBtn.addEventListener("click", () => {
     fetch("data/colors.json").then(r=>r.json())
   ]);
   refreshSelect();
+  autoRenderFromParams();
 })();
 
 function refreshSelect() {
@@ -143,4 +146,27 @@ function needsLightText(hex){
   // luminance approximation
   const y = (r*299 + g*587 + b*114) / 1000;
   return y < 110;
+}
+
+
+function autoRenderFromParams(){
+  const mode = PARAMS.get('mode');
+  const id = PARAMS.get('id');
+  const embed = PARAMS.get('embed');
+  if (mode && (mode==='class' || mode==='teacher')) MODE = mode;
+
+  if (embed==='1' || embed==='true'){
+    document.body.classList.add('embed');
+  }
+
+  if (id){
+    // set select & render
+    const items = MODE === "class" ? classes : professors || teachers || [];
+    const found = items.find(i => i.id === id);
+    if (found){
+      selectEl.value = id;
+      const filtered = filterSessions(MODE, id);
+      renderSchedule(filtered);
+    }
+  }
 }
