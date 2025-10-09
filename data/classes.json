@@ -6,5 +6,28 @@
   {
     "id": "SMX1",
     "name": "1r de SMX"
+  },
+  {
+    "id": "ASIX1",
+    "name": "1r de ASIX"
+  },
+  {
+    "id": "DAW1",
+    "name": "1r de DAW"
+  },  {
+    "id": "DAM2",
+    "name": "2n de DAM"
+  },
+  {
+    "id": "SMX2",
+    "name": "2n de SMX"
+  },
+  {
+    "id": "ASIX2",
+    "name": "2n de ASIX"
+  },
+  {
+    "id": "DAW2",
+    "name": "2n de DAW"
   }
 ]

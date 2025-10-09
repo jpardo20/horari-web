@@ -1,66 +1,681 @@
 [
   {
-    "id": "0156. Anglès professional",
-    "name": "0156. Anglès professional"
+    "id": "Anglès professional",
+    "name": "Anglès professional",
+    "codi": "0179",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Implantació de sistemes operatius",
+    "name": "Implantació de sistemes operatius",
+    "codi": "0369",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Planificació i administració de xarxes",
+    "name": "Planificació i administració de xarxes",
+    "codi": "0370",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Fonaments de maquinari",
+    "name": "Fonaments de maquinari",
+    "codi": "0371",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Gestió de bases de dades",
+    "name": "Gestió de bases de dades",
+    "codi": "0372",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Llenguatge de marques i sistemes de gestió d’informació",
+    "name": "Llenguatge de marques i sistemes de gestió d’informació",
+    "codi": "0373",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Llenguatges de marques i sistemes de gestió d’informació",
+    "name": "Llenguatges de marques i sistemes de gestió d’informació",
+    "codi": "0373",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Administració de sistemes operatius",
+    "name": "Administració de sistemes operatius",
+    "codi": "0374",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Serveis de xarxa i internet",
+    "name": "Serveis de xarxa i internet",
+    "codi": "0375",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Implantació d’aplicacions web",
+    "name": "Implantació d’aplicacions web",
+    "codi": "0376",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Administració de sistemes gestors de bases de dades",
+    "name": "Administració de sistemes gestors de bases de dades",
+    "codi": "0377",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Seguretat i alta disponibilitat",
+    "name": "Seguretat i alta disponibilitat",
+    "codi": "0378",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Projecte intermodular d'administració de sistemes informàtics en xarxa",
+    "name": "Projecte intermodular d'administració de sistemes informàtics en xarxa",
+    "codi": "0379",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "132",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "165",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Digitalització aplicada als sectors productius",
+    "name": "Digitalització aplicada als sectors productius",
+    "codi": "1665",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Sostenibilitat aplicada al sistema productiu",
+    "name": "Sostenibilitat aplicada al sistema productiu",
+    "codi": "1708",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat I",
+    "name": "Itinerari personal per a l'ocupabilitat I",
+    "codi": "1709",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat II",
+    "name": "Itinerari personal per a l'ocupabilitat II",
+    "codi": "1710",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "185",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "198",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "231",
+    "cicle": "ASIX",
+    "curs": null
+  },
+  {
+    "id": "Anglès professional",
+    "name": "Anglès professional",
+    "codi": "0179",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Llenguatges de marques i sistemes de gestió d’informació",
+    "name": "Llenguatges de marques i sistemes de gestió d’informació",
+    "codi": "0373",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Sistemes informàtics",
+    "name": "Sistemes informàtics",
+    "codi": "0483",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Bases de dades",
+    "name": "Bases de dades",
+    "codi": "0484",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Programació",
+    "name": "Programació",
+    "codi": "0485",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Accés a dades",
+    "name": "Accés a dades",
+    "codi": "0486",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Entorns de desenvolupament",
+    "name": "Entorns de desenvolupament",
+    "codi": "0487",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Desenvolupament d’interfícies",
+    "name": "Desenvolupament d’interfícies",
+    "codi": "0488",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Programació multimèdia i dispositius mòbils",
+    "name": "Programació multimèdia i dispositius mòbils",
+    "codi": "0489",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Programació de serveis i processos",
+    "name": "Programació de serveis i processos",
+    "codi": "0490",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Sistemes de gestió empresarial",
+    "name": "Sistemes de gestió empresarial",
+    "codi": "0491",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Projecte intermodular de desenvolupament d'aplicacions multiplataforma",
+    "name": "Projecte intermodular de desenvolupament d'aplicacions multiplataforma",
+    "codi": "0492",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "119",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "132",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "165",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Digitalització aplicada als sectors productius",
+    "name": "Digitalització aplicada als sectors productius",
+    "codi": "1665",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Sostenibilitat aplicada al sistema productiu",
+    "name": "Sostenibilitat aplicada al sistema productiu",
+    "codi": "1708",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat I",
+    "name": "Itinerari personal per a l'ocupabilitat I",
+    "codi": "1709",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat II",
+    "name": "Itinerari personal per a l'ocupabilitat II",
+    "codi": "1710",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "198",
+    "cicle": "DAM",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "264",
+    "cicle": "DAM",
+    "curs": null
   },
   {
     "id": "0179. Anglès professional",
-    "name": "0179. Anglès professional"
-  },
-  {
-    "id": "0221. Muntatge i manteniment d'equips.",
-    "name": "0221. Muntatge i manteniment d'equips."
-  },
-  {
-    "id": "0222. Sistemes operatius monolloc.",
-    "name": "0222. Sistemes operatius monolloc."
-  },
-  {
-    "id": "0223. Aplicacions ofimàtiques.",
-    "name": "0223. Aplicacions ofimàtiques."
-  },
-  {
-    "id": "0225. Xarxes locals",
-    "name": "0225. Xarxes locals"
+    "name": "0179. Anglès professional",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
   },
   {
     "id": "0373. Llenguatge de marques",
-    "name": "0373. Llenguatge de marques"
+    "name": "0373. Llenguatge de marques",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
   },
   {
     "id": "0483. Sistemes informàtics",
-    "name": "0483. Sistemes informàtics"
+    "name": "0483. Sistemes informàtics",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
   },
   {
     "id": "0484. Base de dades",
-    "name": "0484. Base de dades"
+    "name": "0484. Base de dades",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
   },
   {
     "id": "0485. Programació",
-    "name": "0485. Programació"
+    "name": "0485. Programació",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
   },
   {
     "id": "0487. Entorns de desenvolupament",
-    "name": "0487. Entorns de desenvolupament"
+    "name": "0487. Entorns de desenvolupament",
+    "codi": null,
+    "cicle": "DAM",
+    "curs": 1
+  },
+  {
+    "id": "Anglès professional",
+    "name": "Anglès professional",
+    "codi": "0179",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Llenguatges de marques i sistemes de gestió d’informació",
+    "name": "Llenguatges de marques i sistemes de gestió d’informació",
+    "codi": "0373",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Sistemes informàtics",
+    "name": "Sistemes informàtics",
+    "codi": "0483",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Bases de dades",
+    "name": "Bases de dades",
+    "codi": "0484",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Programació",
+    "name": "Programació",
+    "codi": "0485",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Entorns de desenvolupament",
+    "name": "Entorns de desenvolupament",
+    "codi": "0487",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Desenvolupament web en entorn client",
+    "name": "Desenvolupament web en entorn client",
+    "codi": "0612",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Desenvolupament web en entorn servidor",
+    "name": "Desenvolupament web en entorn servidor",
+    "codi": "0613",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Desplegament d’aplicacions web",
+    "name": "Desplegament d’aplicacions web",
+    "codi": "0614",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Disseny d’interfícies web",
+    "name": "Disseny d’interfícies web",
+    "codi": "0615",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Projecte intermodular de desenvolupament d'aplicacions web",
+    "name": "Projecte intermodular de desenvolupament d'aplicacions web",
+    "codi": "0616",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "119",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "132",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "165",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Digitalització aplicada als sectors productius",
+    "name": "Digitalització aplicada als sectors productius",
+    "codi": "1665",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Sostenibilitat aplicada al sistema productiu",
+    "name": "Sostenibilitat aplicada al sistema productiu",
+    "codi": "1708",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat I",
+    "name": "Itinerari personal per a l'ocupabilitat I",
+    "codi": "1709",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat II",
+    "name": "Itinerari personal per a l'ocupabilitat II",
+    "codi": "1710",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "198",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "264",
+    "cicle": "DAW",
+    "curs": null
+  },
+  {
+    "id": "Anglès professional",
+    "name": "Anglès professional",
+    "codi": "0156",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Muntatge i manteniment d’equips",
+    "name": "Muntatge i manteniment d’equips",
+    "codi": "0221",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Sistemes operatius monolloc",
+    "name": "Sistemes operatius monolloc",
+    "codi": "0222",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Aplicacions ofimàtiques",
+    "name": "Aplicacions ofimàtiques",
+    "codi": "0223",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Sistemes operatius en xarxa",
+    "name": "Sistemes operatius en xarxa",
+    "codi": "0224",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Xarxes locals",
+    "name": "Xarxes locals",
+    "codi": "0225",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Seguretat informàtica",
+    "name": "Seguretat informàtica",
+    "codi": "0226",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Serveis de xarxa",
+    "name": "Serveis de xarxa",
+    "codi": "0227",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Aplicacions web",
+    "name": "Aplicacions web",
+    "codi": "0228",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "119",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "132",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Digitalització aplicada als sectors productius",
+    "name": "Digitalització aplicada als sectors productius",
+    "codi": "1664",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Sostenibilitat aplicada al sistema productiu",
+    "name": "Sostenibilitat aplicada al sistema productiu",
+    "codi": "1708",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat I",
+    "name": "Itinerari personal per a l'ocupabilitat I",
+    "codi": "1709",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Itinerari personal per a l'ocupabilitat II",
+    "name": "Itinerari personal per a l'ocupabilitat II",
+    "codi": "1710",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "Projecte intermodular",
+    "name": "Projecte intermodular",
+    "codi": "1713",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "198",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "hores",
+    "name": "hores",
+    "codi": "231",
+    "cicle": "SMX",
+    "curs": null
+  },
+  {
+    "id": "0156. Anglès professional",
+    "name": "0156. Anglès professional",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
+  },
+  {
+    "id": "0221. Muntatge i manteniment d'equips.",
+    "name": "0221. Muntatge i manteniment d'equips.",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
+  },
+  {
+    "id": "0222. Sistemes operatius monolloc.",
+    "name": "0222. Sistemes operatius monolloc.",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
+  },
+  {
+    "id": "0223. Aplicacions ofimàtiques.",
+    "name": "0223. Aplicacions ofimàtiques.",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
+  },
+  {
+    "id": "0225. Xarxes locals",
+    "name": "0225. Xarxes locals",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   },
   {
     "id": "1664. Digitalització.",
-    "name": "1664. Digitalització."
+    "name": "1664. Digitalització.",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   },
   {
     "id": "1709. IPO I",
-    "name": "1709. IPO I"
+    "name": "1709. IPO I",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   },
   {
     "id": "Activitat centre",
-    "name": "Activitat centre"
+    "name": "Activitat centre",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   },
   {
     "id": "Mòdul professional optatiu: Robòtica i Prog. Python",
-    "name": "Mòdul professional optatiu: Robòtica i Prog. Python"
+    "name": "Mòdul professional optatiu: Robòtica i Prog. Python",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   },
   {
     "id": "Tutoria",
-    "name": "Tutoria"
+    "name": "Tutoria",
+    "codi": null,
+    "cicle": "SMX",
+    "curs": 1
   }
 ]
