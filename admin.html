@@ -77,7 +77,6 @@
       <button class="dropdown-toggle">Accions ▾</button>
       <div class="dropdown-menu">
         <button class="btn" id="loadServerBtn">Carrega del servidor</button>
-        <hr/>
         <label class="btn">Importa <code>sessions.json</code>
           <input id="fileInput" type="file" accept=".json" style="display:none">
         </label>
@@ -87,14 +86,14 @@
         <button class="btn" id="exportBtn">Descarrega sessions.json</button>
       </div>
     </div>
-    <!-- <button class="btn" id="loadServerBtn">Carrega del servidor</button>
+    <button class="btn" id="loadServerBtn">Carrega del servidor</button>
     <label class="btn">
       Importa <code>sessions.json</code>
       <input id="fileInput" type="file" accept=".json" style="display:none">
     </label>
     <button class="btn" id="addRowBtn">Afegeix sessió</button>
     <button class="btn" id="exportBtn">Descarrega sessions.json</button>
-    <button class="btn" id="validateBtn">Comprova solapaments</button> -->
+    <button class="btn" id="validateBtn">Comprova solapaments</button>
     <span id="status" class="pill muted"></span>
     <a href="index.html" class="btn right">↩ Torna a la vista</a>
   </div>
@@ -154,7 +153,7 @@
   <script>
     // --- Soft access gate (deterrent, not real security on GitHub Pages) ---
     // Change this to the SHA-256 of your chosen passphrase (see tools/hash.html)
-    const ADMIN_HASH = "a0fc5ca44fd17293e959146e22fdd3d056c842707ca732b7c67e3d0486426ffd"; // sha256('canvia-ho')
+    const ADMIN_HASH = "4e6f2a7bbe47998188b73e6b3ccd8d55d4efd8ba2f2a573b7d20b5045392f1b8"; // sha256('canvia-ho')
     async function sha256Hex(str){
       const enc = new TextEncoder().encode(str);
       const buf = await crypto.subtle.digest('SHA-256', enc);
