@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editor d'horari — sessions.json</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:24px}
+    h1{margin-bottom:8px} h2{margin:12px 0}
+    .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+    .btn{padding:8px 12px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer}
+    .btn.primary{background:#111;color:#fff;border-color:#111}
+    .danger{color:#b00020}
+    .ok{color:#0a7d2a}
+    table{border-collapse:collapse;width:100%}
+    th,td{border:1px solid #ddd;padding:6px}
+    th{background:#f5f5f5}
+    select,input[type="time"],input[type="text"]{padding:6px;border:1px solid #ccc;border-radius:6px;width:100%;box-sizing:border-box}
+    .controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
+    .pill{font-size:.8rem;padding:2px 8px;border:1px solid #ddd;border-radius:999px}
+    .muted{color:#666}
+    .right{margin-left:auto}
+    .nowrap{white-space:nowrap}
+    .warn{background:#fff5c2}
+    .footer{margin-top:24px}
+    .small{font-size:.9em}
+    .table-wrap{overflow:auto}
+    .timewrap{display:flex;align-items:center;gap:6px}
+    .timewrap .btn{padding:6px 8px}
+  </style>
+</head>
+<body>
+  <h1>Editor de sessions</h1>
+  <!-- <p class="muted small">Mantén <code>classes.json</code> i <code>teachers.json</code> com a llista mestra de grups/professors.</p> -->
+
+  <div class="bar">
+    <button class="btn" id="loadServerBtn">Carrega del servidor</button>
+    <label class="btn">
+      Importa <code>sessions.json</code>
+      <input id="fileInput" type="file" accept=".json" style="display:none">
+    </label>
+    <button class="btn" id="addRowBtn">Afegeix sessió</button>
+    <button class="btn" id="exportBtn">Descarrega sessions.json</button>
+    <button class="btn" id="validateBtn">Comprova solapaments</button>
+    <span id="status" class="pill muted"></span>
+    <a href="index.html" class="btn right">↩ Torna a la vista</a>
+  </div>
+
+  <div class="controls">
+    <label>Mode hora:</label>
+    <select id="timeMode"><option value="time">Hores HH:MM</option><option value="slots">Franges</option></select>
+    <label>Filtra:</label>
+    <select id="filterMode">
+      <option value="all">Totes</option>
+      <option value="class">Per classe</option>
+      <option value="teacher">Per professor</option>
+    </select>
+    <select id="filterSelect"></select>
+    <button class="btn" id="clearFilter">Neteja filtre</button>
+    <span class="pill muted">Files: <span id="rowCount">0</span></span>
+    <span class="pill muted">Avisos: <span id="warnCount">0</span></span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>Inici</th>
+          <th>Fi</th>
+          <th>Assignatura</th>
+          <th>Classe</th>
+          <th>Professor/a</th>
+          <th>Aula</th>
+          <th class="nowrap">Accions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="report" class="footer"></div>
+
+  <script src="js/admin.js"></script>
+  <script src="js/timepicker.js"></script>
+</body>
+</html>

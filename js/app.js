@@ -2,7 +2,7 @@ const DAYS = ["", "Dilluns","Dimarts","Dimecres","Dijous","Divendres"]; // 1..5
 
 let MODE = "class"; // "class" | "teacher"
 let classes = [];
-let teachers = [];
+let professors = [];
 let sessions = [];
 let subjectColors = {}; // subject -> hex
 
@@ -29,9 +29,9 @@ renderBtn.addEventListener("click", () => {
 });
 
 (async function init() {
-  [classes, teachers, sessions, subjectColors] = await Promise.all([
+  [classes, professors, sessions, subjectColors] = await Promise.all([
     fetch("data/classes.json").then(r=>r.json()),
-    fetch("data/teachers.json").then(r=>r.json()),
+    fetch("data/professors.json").then(r=>r.json()),
     fetch("data/sessions.json").then(r=>r.json()),
     fetch("data/colors.json").then(r=>r.json())
   ]);
@@ -39,7 +39,7 @@ renderBtn.addEventListener("click", () => {
 })();
 
 function refreshSelect() {
-  const items = MODE === "class" ? classes : teachers;
+  const items = MODE === "class" ? classes : professors;
   selectLabel.textContent = MODE === "class" ? "Classe:" : "Professor:";
   selectEl.innerHTML = `<option value="">— Selecciona —</option>` +
     items.map(i => `<option value="${i.id}">${i.name}</option>`).join("");
@@ -127,7 +127,7 @@ function cellFor(items) {
   return div;
 }
 
-function teacherName(id) { return teachers.find(t=>t.id===id)?.name ?? id; }
+function teacherName(id) { return professors.find(t=>t.id===id)?.name ?? id; }
 function groupName(id)   { return classes.find(c=>c.id===id)?.name ?? id; }
 
 function escapeHtml(x) {

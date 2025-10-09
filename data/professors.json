@@ -1,15 +1,15 @@
 [
   {
     "id": "JOAN",
-    "name": "Joan"
+    "name": "Joan Pardo"
   },
   {
     "id": "NACHO",
-    "name": "Nacho"
+    "name": "Nacho Herrero"
   },
   {
     "id": "AMPARO",
-    "name": "Amparo"
+    "name": "Amparo Monstesinos"
   },
   {
     "id": "IVAN",
@@ -29,10 +29,14 @@
   },
   {
     "id": "TUTOR_DAM1",
-    "name": "Tutor/a DAM1"
+    "name": "Joan Pardo"
   },
   {
     "id": "TUTOR_SMX1",
-    "name": "Tutor/a SMX1"
+    "name": "Joan Pardo"
+  },
+  {
+    "id": "TUTOR_ASIX1",
+    "name": "Amparo Monstesinos"
   }
 ]
