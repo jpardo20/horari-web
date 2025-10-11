@@ -1,0 +1,18 @@
+{
+  "SMX": {
+    "abbr": "SMX",
+    "fullName": "Sistemes Microinformàtics i Xarxes"
+  },
+  "DAM": {
+    "abbr": "DAM",
+    "fullName": "Desenvolupament d'Aplicacions Multiplataforma"
+  },
+  "DAW": {
+    "abbr": "DAW",
+    "fullName": "Desenvolupament d'Aplicacions Web"
+  },
+  "ASIX": {
+    "abbr": "ASIX",
+    "fullName": "Administració de Sistemes Informàtics en Xarxa"
+  }
+}

@@ -25,12 +25,18 @@
     .cell.now{ box-shadow: inset 0 0 0 2px #ff9800; border-color:#ff9800; }
     .cell.today.now{ box-shadow: inset 0 0 0 3px #ff5722; border-color:#ff5722; }
     .pill { font-size: 0.75rem; padding: 2px 6px; border-radius: 9999px; border: 1px solid rgba(0,0,0,.08); background:#fff6; display:inline-block; }
-    body.embed .picker, body.embed .legend, body.embed h1{ display:none !important; }
+    body.embed .picker, body.embed .legend{ display:none !important; }
   body.embed { margin: 8px; }
 </style>
 </head>
 <body>
-  <h1>Horari</h1>
+  <header class="brand">
+  <div class="brand__text">
+    <h1 class="brand__title">Horari</h1>
+    <p id="brand-subtitle" class="brand__subtitle">Curs 2025/2026 · —</p>
+  </div>
+  <img class="brand__logo" src="img/logo.png" alt="DIGITECH">
+</header>
 
   <div class="picker">
     <div class="buttons" id="modeButtons">
@@ -41,6 +47,8 @@
     <div class="controls">
       <label id="selectLabel" for="entitySelect">Classe:</label>
       <select id="entitySelect"></select>
+      <label for="trimSelect">Trimestre:</label>
+      <select id="trimSelect"><option value="1">1r</option><option value="2">2n</option><option value="3">3r</option></select>
       <button class="btn" id="renderBtn">Mostra</button>
     </div>
   </div>

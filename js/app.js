@@ -8,12 +8,35 @@ let classes = [];
 let professors = [];
 let sessions = [];
 let subjectColors = {}; // subject -> hex
+let cycles = {}; // codi -> {abbr, fullName}
 
+
+// === Colors: auto-generated from subject code (no colors.json needed) ===
+function hashStr(s){ let h=5381; for(let i=0;i<s.length;i++){ h=((h<<5)+h)+s.charCodeAt(i);} return h>>>0; }
+const PALETTE=[
+  {bg:'#E8F1FF',border:'#C9DFFF'},{bg:'#EAFBF1',border:'#C8F2DD'},
+  {bg:'#FFF2E5',border:'#FFD7B8'},{bg:'#F8EAFE',border:'#EBCDFD'},
+  {bg:'#FDECF0',border:'#F8CDD6'},{bg:'#EAF7FE',border:'#CDEBFD'},
+  {bg:'#EFFFF4',border:'#D4FBE3'},{bg:'#FFFDEB',border:'#FFF4B8'},
+  {bg:'#E9F5FF',border:'#CFE9FF'},{bg:'#F2E9FF',border:'#E0CFFF'},
+  {bg:'#FFE9F7',border:'#FFCFEA'},{bg:'#E9FFF7',border:'#CFF7EA'}
+];
+function colorForSubjectItem(s){
+  const raw = String(s.subject||'').trim();
+  const code = raw.split('.')[0].trim() || raw; // '0485. Programació' -> '0485'
+  const i = hashStr(code) % PALETTE.length;
+  const {bg,border} = PALETTE[i];
+  return { bg, border, text:'#1f2937' };
+}
 const modeButtons = document.getElementById("modeButtons");
 const selectEl = document.getElementById("entitySelect");
 const selectLabel = document.getElementById("selectLabel");
 const renderBtn = document.getElementById("renderBtn");
 const scheduleDiv = document.getElementById("schedule");
+const brandTitle = document.querySelector(".brand__title");
+const trimSelect = document.getElementById("trimSelect");
+const brandSubtitle = document.getElementById("brand-subtitle");
+let TRIM = 1;
 
 modeButtons.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
@@ -43,10 +66,11 @@ const PARAMS = new URLSearchParams(location.search);
     try { professors = await fetch("data/teachers.json").then(r=>r.json()); } catch { professors = []; }
   }
   sessions = await fetch("data/sessions.json").then(r=>r.json());
-  subjectColors = await fetch("data/colors.json").then(r=>r.json()).catch(()=> ({}));
+    cycles = await fetch("data/cicles.json").then(r=>r.json()).catch(()=> ({}));
 
   refreshSelect();
   autoRenderFromParams();
+  updateBrandSubtitle && updateBrandHeader();
 })();
 
 function refreshSelect() {
@@ -58,7 +82,19 @@ function refreshSelect() {
 }
 
 function filterSessions(mode, id) {
-  return sessions.filter(s => mode === "class" ? s.groupId === id : s.teacherId === id);
+  return sessions.filter(s => {
+    const byTrim = (s.trimester ?? 1) === TRIM;
+    if (!byTrim) return false;
+
+    if (s.type === 'break') {
+      if (mode === 'class') {
+        return (s.groupId === id) || (s.groupId === '*') || (!s.groupId);
+      } else {
+        return (s.teacherId === id) || (s.teacherId === '*') || (!s.teacherId);
+      }
+    }
+    return mode === "class" ? s.groupId === id : s.teacherId === id;
+  });
 }
 
 function renderSchedule(list) {
@@ -86,7 +122,7 @@ function renderSchedule(list) {
   const cols = 1 + 5; // hores + dies
   const grid = document.createElement("div");
   grid.className = "grid";
-  grid.style.gridTemplateColumns = `repeat(${cols}, minmax(140px, 1fr))`;
+  grid.style.gridTemplateColumns = `minmax(var(--time-col,110px), auto) repeat(5, minmax(160px, 1fr))`;
 
   // Capçalera (Afegim data-day per a highlight.js)
   grid.appendChild(hdrCell("Hora"));
@@ -95,7 +131,17 @@ function renderSchedule(list) {
   // Cos (Afegim data-slot i data-day per a highlight.js)
   for (const slot of slots) {
     const slotKey = `${slot.start}-${slot.end}`;
-    grid.appendChild(hdrCell(`${slot.start}–${slot.end}`, "", {"data-slot": slotKey}));
+    const hasBreak = list.some(s => s.type === 'break' && `${s.start}-${s.end}` === slotKey && ((s.day||0)===0 || (s.day>=1 && s.day<=5)));
+    if (hasBreak){
+      grid.appendChild(hdrCell(`${slot.start}–${slot.end}`, "", {"data-slot": slotKey}));
+      const band = document.createElement('div');
+      band.className = 'break-band';
+      band.textContent = (list.find(s => s.type==='break' && `${s.start}-${s.end}`===slotKey)?.label) || 'DESCANS';
+      band.style.gridColumn = '2 / -1';
+      grid.appendChild(band);
+      continue;
+    }
+grid.appendChild(hdrCell(`${slot.start}–${slot.end}`, "", {"data-slot": slotKey}));
     for (let d=1; d<=5; d++) {
       const bucket = byDaySlot[d]?.[slotKey] || [];
       grid.appendChild(cellFor(bucket, {"data-day": String(d), "data-slot": slotKey}));
@@ -133,9 +179,9 @@ function cellFor(items, dataset = null) {
     const subj = escapeHtml(s.subject || "");
     const room = s.room ? ` · ${escapeHtml(s.room)}` : "";
     const extra = MODE === "class" ? professorName(s.teacherId) : groupName(s.groupId);
-    const color = subjectColors[subj] || null;
-    const style = color ? `style="background:${color}; padding:8px; border-radius:8px; ${needsLightText(color) ? 'color:white' : ''}"` : "";
-    return `<div ${style}><strong>${subj}</strong> — <span class="muted" style="${color && needsLightText(color) ? 'color:#f0f0f0' : ''}">${escapeHtml(extra)}${room}</span></div>`;
+    const c = colorForSubjectItem(s);
+    const style = `style="background:${c.bg}; border:1px solid ${c.border}; color:${c.text}; padding:8px 10px; border-radius: var(--cell-radius, 8px);"`;
+    return `<div ${style}><strong>${subj}</strong> — <span class="muted" style="opacity:.85">${escapeHtml(extra)}${room}</span></div>`;
   }).join("");
   return div;
 }
@@ -158,14 +204,19 @@ function needsLightText(hex){
 
 // Auto-render a partir de paràmetres (?mode=class|teacher&id=...&embed=1)
 function autoRenderFromParams(){
-  const mode = PARAMS.get('mode');
-  const id = PARAMS.get('id');
-  const embed = PARAMS.get('embed');
-  if (mode && (mode==='class' || mode==='teacher')) MODE = mode;
+  const qs = new URLSearchParams(location.search);
+  const mode = qs.get('mode');
+  const id = qs.get('id');
+  const embed = qs.get('embed');
+  const trim = parseInt(qs.get('trim') || '1', 10);
+  const brand = qs.get('brand');
 
-  if (embed==='1' || embed==='true'){
-    document.body.classList.add('embed');
-  }
+  if (mode && (mode==='class' || mode==='teacher')) MODE = mode;
+  if (embed==='1' || embed==='true'){ document.body.classList.add('embed'); document.body.classList.add('show-brand'); }
+  if (brand==='1' || brand==='true'){ document.body.classList.add('show-brand'); }
+
+  TRIM = isNaN(trim) ? 1 : trim;
+  if (trimSelect) trimSelect.value = String(TRIM);
 
   if (id){
     const items = MODE === "class" ? classes : professors;
@@ -175,5 +226,43 @@ function autoRenderFromParams(){
       const filtered = filterSessions(MODE, id);
       renderSchedule(filtered);
     }
+  }
+  updateBrandHeader();
+}
+function updateBrandHeader() {
+  const id = selectEl.value;
+  const items = MODE === "class" ? classes : professors;
+  const entity = items.find(x=>x.id===id);
+  updateBrandHeader();
+}
+
+selectEl.addEventListener("change", () => { updateBrandHeader(); });
+
+if (trimSelect){
+  trimSelect.addEventListener('change', () => {
+    TRIM = Number(trimSelect.value || 1);
+    const id = selectEl.value;
+    const filtered = filterSessions(MODE, id);
+    renderSchedule(filtered);
+    updateBrandHeader();
+  });
+}
+
+
+/** Actualitza la capçalera corporativa amb text per cicle (classe) o professor/a */
+function updateBrandHeader() {
+  const id = selectEl.value;
+  const ord = (n) => (n==1? '1r' : (n==2? '2n' : (n==3? '3r' : `${n}è`)));
+  if (MODE === 'class') {
+    const m = (id || '').match(/^([A-Z]+)(\d)$/);
+    const code = m ? m[1] : (id || '—');
+    const year = m ? parseInt(m[2],10) : 1;
+    const cycle = cycles[code] || {abbr: code, fullName: code};
+    if (brandTitle) brandTitle.textContent = `${ord(year)} de ${cycle.fullName} (${cycle.abbr})`;
+    if (brandSubtitle) brandSubtitle.textContent = `Curs 2025/2026 - ${ord(TRIM)} Trimestre`;
+  } else {
+    const entity = (MODE === 'teacher' ? professors : classes).find(x => x.id === id);
+    if (brandTitle) brandTitle.textContent = entity?.name || 'Horari';
+    if (brandSubtitle) brandSubtitle.textContent = `Curs 2025/2026 - ${ord(TRIM)} Trimestre`;
   }
 }
