@@ -70,7 +70,7 @@ const PARAMS = new URLSearchParams(location.search);
 
   refreshSelect();
   autoRenderFromParams();
-  updateBrandSubtitle && updateBrandHeader();
+  updateBrandHeader();
 })();
 
 function refreshSelect() {
@@ -122,7 +122,8 @@ function renderSchedule(list) {
   const cols = 1 + 5; // hores + dies
   const grid = document.createElement("div");
   grid.className = "grid";
-  grid.style.gridTemplateColumns = `minmax(var(--time-col,110px), auto) repeat(5, minmax(160px, 1fr))`;
+//   grid.style.gridTemplateColumns = `minmax(var(--time-col,110px), auto) repeat(5, minmax(160px, 1fr))`;
+  grid.style.gridTemplateColumns = `var(--time-col, 84px) repeat(5, minmax(160px, 1fr))`;
 
   // Capçalera (Afegim data-day per a highlight.js)
   grid.appendChild(hdrCell("Hora"));
