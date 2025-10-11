@@ -130,26 +130,6 @@
     ]
   },
   {
-    "id": "hores",
-    "name": "hores",
-    "codi": "132",
-    "cicle": "ASIX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "165",
-    "cicle": "ASIX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
     "id": "Digitalització aplicada als sectors productius",
     "name": "Digitalització aplicada als sectors productius",
     "codi": "1665",
@@ -183,36 +163,6 @@
     "id": "Itinerari personal per a l'ocupabilitat II",
     "name": "Itinerari personal per a l'ocupabilitat II",
     "codi": "1710",
-    "cicle": "ASIX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "185",
-    "cicle": "ASIX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "198",
-    "cicle": "ASIX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "231",
     "cicle": "ASIX",
     "curs": null,
     "trimestres": [
@@ -340,36 +290,6 @@
     ]
   },
   {
-    "id": "hores",
-    "name": "hores",
-    "codi": "119",
-    "cicle": "DAM",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "132",
-    "cicle": "DAM",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "165",
-    "cicle": "DAM",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
     "id": "Digitalització aplicada als sectors productius",
     "name": "Digitalització aplicada als sectors productius",
     "codi": "1665",
@@ -403,26 +323,6 @@
     "id": "Itinerari personal per a l'ocupabilitat II",
     "name": "Itinerari personal per a l'ocupabilitat II",
     "codi": "1710",
-    "cicle": "DAM",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "198",
-    "cicle": "DAM",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "264",
     "cicle": "DAM",
     "curs": null,
     "trimestres": [
@@ -600,36 +500,6 @@
     ]
   },
   {
-    "id": "hores",
-    "name": "hores",
-    "codi": "119",
-    "cicle": "DAW",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "132",
-    "cicle": "DAW",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "165",
-    "cicle": "DAW",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
     "id": "Digitalització aplicada als sectors productius",
     "name": "Digitalització aplicada als sectors productius",
     "codi": "1665",
@@ -663,26 +533,6 @@
     "id": "Itinerari personal per a l'ocupabilitat II",
     "name": "Itinerari personal per a l'ocupabilitat II",
     "codi": "1710",
-    "cicle": "DAW",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "198",
-    "cicle": "DAW",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "264",
     "cicle": "DAW",
     "curs": null,
     "trimestres": [
@@ -780,26 +630,6 @@
     ]
   },
   {
-    "id": "hores",
-    "name": "hores",
-    "codi": "119",
-    "cicle": "SMX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "132",
-    "cicle": "SMX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
     "id": "Digitalització aplicada als sectors productius",
     "name": "Digitalització aplicada als sectors productius",
     "codi": "1664",
@@ -843,26 +673,6 @@
     "id": "Projecte intermodular",
     "name": "Projecte intermodular",
     "codi": "1713",
-    "cicle": "SMX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "198",
-    "cicle": "SMX",
-    "curs": null,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "hores",
-    "name": "hores",
-    "codi": "231",
     "cicle": "SMX",
     "curs": null,
     "trimestres": [
@@ -930,8 +740,8 @@
     ]
   },
   {
-    "id": "1709. IPO I",
-    "name": "1709. IPO I",
+    "id": "1709. Itinerari Personal per a l’Ocupabilitat I",
+    "name": "1709. Itinerari Personal per a l’Ocupabilitat I",
     "codi": null,
     "cicle": "SMX",
     "curs": 1,
