@@ -330,66 +330,6 @@
     ]
   },
   {
-    "id": "0179. Anglès professional",
-    "name": "0179. Anglès professional",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0373. Llenguatge de marques",
-    "name": "0373. Llenguatge de marques",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0483. Sistemes informàtics",
-    "name": "0483. Sistemes informàtics",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0484. Base de dades",
-    "name": "0484. Base de dades",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0485. Programació",
-    "name": "0485. Programació",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0487. Entorns de desenvolupament",
-    "name": "0487. Entorns de desenvolupament",
-    "codi": null,
-    "cicle": "DAM",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
     "id": "Anglès professional",
     "name": "Anglès professional",
     "codi": "M0179",
@@ -692,56 +632,6 @@
   {
     "id": "0221. Muntatge i manteniment d'equips.",
     "name": "0221. Muntatge i manteniment d'equips.",
-    "codi": null,
-    "cicle": "SMX",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0222. Sistemes operatius monolloc.",
-    "name": "0222. Sistemes operatius monolloc.",
-    "codi": null,
-    "cicle": "SMX",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0223. Aplicacions ofimàtiques.",
-    "name": "0223. Aplicacions ofimàtiques.",
-    "codi": null,
-    "cicle": "SMX",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "0225. Xarxes locals",
-    "name": "0225. Xarxes locals",
-    "codi": null,
-    "cicle": "SMX",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "1664. Digitalització.",
-    "name": "1664. Digitalització.",
-    "codi": null,
-    "cicle": "SMX",
-    "curs": 1,
-    "trimestres": [
-      1
-    ]
-  },
-  {
-    "id": "1709. Itinerari Personal per a l’Ocupabilitat I",
-    "name": "1709. Itinerari Personal per a l’Ocupabilitat I",
     "codi": null,
     "cicle": "SMX",
     "curs": 1,
