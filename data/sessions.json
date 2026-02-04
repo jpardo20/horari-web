@@ -801,6 +801,16 @@
   },
   {
     "day": 4,
+    "start": "10:20",
+    "end": "11:20",
+    "subjectId": "AC00",
+    "groupId": "SMX1",
+    "teacherId": "ADC_SMX1",
+    "room": "",
+    "trimester": 1
+  },
+  {
+    "day": 4,
     "start": "11:40",
     "end": "12:40",
     "subjectId": "1709",
