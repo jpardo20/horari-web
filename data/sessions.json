@@ -1,32 +1,11 @@
 [
   {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "18:20",
-    "end": "18:40",
-    "groupId": "ASIX1",
-    "teacherId": "*",
-    "room": "AULA 7",
-    "trimester": 1
-  },  {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "18:20",
-    "end": "18:40",
-    "groupId": "ASIX1",
-    "teacherId": "*",
-    "room": "AULA 7",
-    "trimester": 2
-  },
-  {
     "day": 1,
     "start": "15:20",
     "end": "16:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -36,7 +15,7 @@
     "end": "17:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -46,7 +25,7 @@
     "end": "18:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -56,7 +35,7 @@
     "end": "19:40",
     "subjectId": "1708",
     "groupId": "ASIX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -66,7 +45,7 @@
     "end": "20:40",
     "subjectId": "1708",
     "groupId": "ASIX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -76,7 +55,7 @@
     "end": "21:40",
     "subjectId": "1708",
     "groupId": "ASIX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -86,7 +65,7 @@
     "end": "16:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -96,7 +75,7 @@
     "end": "17:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -106,7 +85,7 @@
     "end": "18:20",
     "subjectId": "0369",
     "groupId": "ASIX1",
-    "teacherId": "GEMA",
+    "teacherId": "PR001007",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -116,7 +95,7 @@
     "end": "19:40",
     "subjectId": "0372",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -126,7 +105,7 @@
     "end": "20:40",
     "subjectId": "0372",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -136,7 +115,7 @@
     "end": "21:40",
     "subjectId": "0372",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -146,7 +125,7 @@
     "end": "16:20",
     "subjectId": "0179",
     "groupId": "ASIX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -156,7 +135,7 @@
     "end": "17:20",
     "subjectId": "0179",
     "groupId": "ASIX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -166,7 +145,7 @@
     "end": "18:20",
     "subjectId": "T001",
     "groupId": "ASIX1",
-    "teacherId": "TUTOR_ASIX1",
+    "teacherId": "TUT_ASIX1",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -176,7 +155,7 @@
     "end": "19:40",
     "subjectId": "1709",
     "groupId": "ASIX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -186,7 +165,7 @@
     "end": "20:40",
     "subjectId": "1709",
     "groupId": "ASIX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -196,7 +175,7 @@
     "end": "21:40",
     "subjectId": "1709",
     "groupId": "ASIX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -206,7 +185,7 @@
     "end": "16:20",
     "subjectId": "0371",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -216,7 +195,7 @@
     "end": "17:20",
     "subjectId": "0371",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -226,7 +205,7 @@
     "end": "18:20",
     "subjectId": "0371",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -236,7 +215,7 @@
     "end": "19:40",
     "subjectId": "0372",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -246,7 +225,7 @@
     "end": "20:40",
     "subjectId": "0372",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -256,7 +235,7 @@
     "end": "21:40",
     "subjectId": "0373",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -264,9 +243,9 @@
     "day": 5,
     "start": "15:20",
     "end": "16:20",
-    "subjectId": "MOP02",
+    "subjectId": "OP02",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -274,9 +253,9 @@
     "day": 5,
     "start": "16:20",
     "end": "17:20",
-    "subjectId": "MOP02",
+    "subjectId": "OP02",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -284,9 +263,9 @@
     "day": 5,
     "start": "17:20",
     "end": "18:20",
-    "subjectId": "MOP02",
+    "subjectId": "OP02",
     "groupId": "ASIX1",
-    "teacherId": "VALERIA",
+    "teacherId": "PR001009",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -296,7 +275,7 @@
     "end": "19:40",
     "subjectId": "0373",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -306,7 +285,7 @@
     "end": "20:40",
     "subjectId": "0373",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
@@ -316,38 +295,17 @@
     "end": "21:40",
     "subjectId": "0373",
     "groupId": "ASIX1",
-    "teacherId": "ANNA",
+    "teacherId": "PR001008",
     "room": "AULA 7",
     "trimester": 1
   },
   {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "11:20",
-    "end": "11:40",
-    "groupId": "DAM1",
-    "teacherId": "*",
-    "room": "",
-    "trimester": 1
-  },  {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "11:20",
-    "end": "11:40",
-    "groupId": "DAM1",
-    "teacherId": "*",
-    "room": "",
-    "trimester": 2
-  },
-  {
     "day": 1,
     "start": "08:20",
     "end": "09:20",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -357,7 +315,7 @@
     "end": "10:20",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -367,7 +325,7 @@
     "end": "11:20",
     "subjectId": "0484",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -377,7 +335,7 @@
     "end": "12:40",
     "subjectId": "0373",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -387,7 +345,7 @@
     "end": "13:40",
     "subjectId": "0373",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -397,7 +355,7 @@
     "end": "14:40",
     "subjectId": "0373",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -407,7 +365,7 @@
     "end": "09:20",
     "subjectId": "0179",
     "groupId": "DAM1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "",
     "trimester": 1
   },
@@ -417,7 +375,7 @@
     "end": "10:20",
     "subjectId": "0484",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -427,7 +385,7 @@
     "end": "11:20",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -437,7 +395,7 @@
     "end": "12:40",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -447,7 +405,7 @@
     "end": "13:40",
     "subjectId": "0483",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -457,7 +415,7 @@
     "end": "14:40",
     "subjectId": "0483",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -467,7 +425,7 @@
     "end": "09:20",
     "subjectId": "0487",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "",
     "trimester": 1
   },
@@ -477,7 +435,7 @@
     "end": "10:20",
     "subjectId": "0487",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "",
     "trimester": 1
   },
@@ -487,7 +445,7 @@
     "end": "11:20",
     "subjectId": "0487",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "",
     "trimester": 1
   },
@@ -497,7 +455,7 @@
     "end": "12:40",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -507,7 +465,7 @@
     "end": "13:40",
     "subjectId": "0483",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -517,7 +475,7 @@
     "end": "14:40",
     "subjectId": "0483",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -527,7 +485,7 @@
     "end": "09:20",
     "subjectId": "0179",
     "groupId": "DAM1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "",
     "trimester": 1
   },
@@ -537,7 +495,7 @@
     "end": "10:20",
     "subjectId": "0484",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -547,7 +505,7 @@
     "end": "11:20",
     "subjectId": "0484",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -557,7 +515,7 @@
     "end": "12:40",
     "subjectId": "1709",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -567,7 +525,7 @@
     "end": "13:40",
     "subjectId": "1709",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -577,7 +535,7 @@
     "end": "14:40",
     "subjectId": "1709",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -587,7 +545,7 @@
     "end": "09:20",
     "subjectId": "AC00",
     "groupId": "DAM1",
-    "teacherId": "CENTRE_DAM1",
+    "teacherId": "ADC_DAM1",
     "room": "",
     "trimester": 1
   },
@@ -597,7 +555,7 @@
     "end": "10:20",
     "subjectId": "AC00",
     "groupId": "DAM1",
-    "teacherId": "CENTRE_DAM1",
+    "teacherId": "ADC_DAM1",
     "room": "",
     "trimester": 1
   },
@@ -607,7 +565,7 @@
     "end": "11:20",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -617,7 +575,7 @@
     "end": "12:40",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -627,7 +585,7 @@
     "end": "13:40",
     "subjectId": "0485",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -637,31 +595,9 @@
     "end": "14:40",
     "subjectId": "T001",
     "groupId": "DAM1",
-    "teacherId": "TUTOR_DAM1",
+    "teacherId": "TUT_DAM1",
     "room": "",
     "trimester": 1
-  },
-  {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "11:20",
-    "end": "11:40",
-    "groupId": "SMX1",
-    "teacherId": "*",
-    "room": "",
-    "trimester": 1
-  },
-  {
-    "type": "break",
-    "label": "DESCANS",
-    "day": 0,
-    "start": "11:20",
-    "end": "11:40",
-    "groupId": "SMX1",
-    "teacherId": "*",
-    "room": "",
-    "trimester": 2
   },
   {
     "day": 1,
@@ -669,7 +605,7 @@
     "end": "09:20",
     "subjectId": "0221",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -679,7 +615,7 @@
     "end": "10:20",
     "subjectId": "0221",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -689,7 +625,7 @@
     "end": "11:20",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -699,7 +635,7 @@
     "end": "12:40",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -709,7 +645,7 @@
     "end": "13:40",
     "subjectId": "1664",
     "groupId": "SMX1",
-    "teacherId": "JAVIER",
+    "teacherId": "PR001006",
     "room": "",
     "trimester": 1
   },
@@ -719,7 +655,7 @@
     "end": "14:40",
     "subjectId": "1664",
     "groupId": "SMX1",
-    "teacherId": "JAVIER",
+    "teacherId": "PR001006",
     "room": "",
     "trimester": 1
   },
@@ -729,7 +665,7 @@
     "end": "09:20",
     "subjectId": "0223",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -739,7 +675,7 @@
     "end": "10:20",
     "subjectId": "0156",
     "groupId": "SMX1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "",
     "trimester": 1
   },
@@ -749,7 +685,7 @@
     "end": "11:20",
     "subjectId": "0221",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -759,7 +695,7 @@
     "end": "12:40",
     "subjectId": "0221",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -769,7 +705,7 @@
     "end": "13:40",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -779,7 +715,7 @@
     "end": "14:40",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -789,7 +725,7 @@
     "end": "09:20",
     "subjectId": "0223",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -799,7 +735,7 @@
     "end": "10:20",
     "subjectId": "0223",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -809,7 +745,7 @@
     "end": "11:20",
     "subjectId": "0225",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -819,7 +755,7 @@
     "end": "12:40",
     "subjectId": "0225",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -829,7 +765,7 @@
     "end": "13:40",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -839,7 +775,7 @@
     "end": "14:40",
     "subjectId": "0222",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "",
     "trimester": 1
   },
@@ -849,7 +785,7 @@
     "end": "09:20",
     "subjectId": "0223",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -859,17 +795,7 @@
     "end": "10:20",
     "subjectId": "0156",
     "groupId": "SMX1",
-    "teacherId": "AMPARO",
-    "room": "",
-    "trimester": 1
-  },
-  {
-    "day": 4,
-    "start": "10:20",
-    "end": "11:20",
-    "subjectId": "T001",
-    "groupId": "SMX1",
-    "teacherId": "TUTOR_SMX1",
+    "teacherId": "PR001003",
     "room": "",
     "trimester": 1
   },
@@ -879,7 +805,7 @@
     "end": "12:40",
     "subjectId": "1709",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -889,7 +815,7 @@
     "end": "13:40",
     "subjectId": "1709",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -899,7 +825,7 @@
     "end": "14:40",
     "subjectId": "1709",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "",
     "trimester": 1
   },
@@ -909,7 +835,7 @@
     "end": "09:20",
     "subjectId": "0225",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -919,7 +845,7 @@
     "end": "10:20",
     "subjectId": "0225",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -929,7 +855,7 @@
     "end": "11:20",
     "subjectId": "0225",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -937,9 +863,9 @@
     "day": 5,
     "start": "11:40",
     "end": "12:40",
-    "subjectId": "MOP01",
+    "subjectId": "OP01",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -947,9 +873,9 @@
     "day": 5,
     "start": "12:40",
     "end": "13:40",
-    "subjectId": "MOP01",
+    "subjectId": "OP01",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "",
     "trimester": 1
   },
@@ -959,7 +885,7 @@
     "end": "14:40",
     "subjectId": "AC00",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
+    "teacherId": "ADC_SMX1",
     "room": "",
     "trimester": 1
   },
@@ -968,7 +894,7 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "DAM1",
-    "teacherId": "JAVIER",
+    "teacherId": "PR001006",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "1665"
@@ -978,7 +904,7 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "DAM1",
-    "teacherId": "JAVIER",
+    "teacherId": "PR001006",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "1665"
@@ -988,7 +914,7 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0484"
@@ -998,7 +924,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0373"
@@ -1008,7 +934,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0373"
@@ -1018,7 +944,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0373"
@@ -1028,7 +954,7 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "DAM1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0179"
@@ -1038,7 +964,7 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0484"
@@ -1048,7 +974,7 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0484"
@@ -1058,7 +984,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0485"
@@ -1068,7 +994,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0485"
@@ -1078,7 +1004,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "0483"
@@ -1088,7 +1014,7 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0487"
@@ -1098,7 +1024,7 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0487"
@@ -1108,7 +1034,7 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "DAM1",
-    "teacherId": "IVAN",
+    "teacherId": "PR001004",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0487"
@@ -1118,7 +1044,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0483"
@@ -1128,7 +1054,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0483"
@@ -1138,7 +1064,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0483"
@@ -1148,7 +1074,7 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "DAM1",
-    "teacherId": "AMPARO",
+    "teacherId": "PR001003",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0179"
@@ -1158,7 +1084,7 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0484"
@@ -1168,7 +1094,7 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "DAM1",
-    "teacherId": "JOAN",
+    "teacherId": "PR001001",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0484"
@@ -1178,7 +1104,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "1709"
@@ -1188,7 +1114,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "1709"
@@ -1198,7 +1124,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "DAM1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "1709"
@@ -1208,7 +1134,7 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "DAM1",
-    "teacherId": "CENTRE_DAM1",
+    "teacherId": "ADC_DAM1",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "AC00"
@@ -1218,7 +1144,7 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "DAM1",
-    "teacherId": "CENTRE_DAM1",
+    "teacherId": "ADC_DAM1",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "AC00"
@@ -1228,7 +1154,7 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0485"
@@ -1238,7 +1164,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0485"
@@ -1248,7 +1174,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "DAM1",
-    "teacherId": "NACHO",
+    "teacherId": "PR001002",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "0485"
@@ -1258,7 +1184,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "DAM1",
-    "teacherId": "TUTOR_DAM1",
+    "teacherId": "TUT_DAM1",
     "room": "AULA 7",
     "trimester": 2,
     "subjectId": "Tutoria"
@@ -1268,8 +1194,8 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 7",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0221"
   },
@@ -1278,8 +1204,8 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 7",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0221"
   },
@@ -1288,8 +1214,8 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
-    "room": "AULA 7",
+    "teacherId": "PR001002",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0222"
   },
@@ -1298,8 +1224,8 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
-    "room": "AULA 7",
+    "teacherId": "PR001002",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0222"
   },
@@ -1308,8 +1234,8 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "SMX1",
-    "teacherId": "JAVIER",
-    "room": "AULA 7",
+    "teacherId": "PR001006",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "1664"
   },
@@ -1318,8 +1244,8 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
-    "room": "AULA 7",
+    "teacherId": "ADC_SMX1",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "AC00"
   },
@@ -1328,8 +1254,8 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 7",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0223"
   },
@@ -1338,8 +1264,8 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "SMX1",
-    "teacherId": "AMPARO",
-    "room": "AULA 7",
+    "teacherId": "PR001003",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0156"
   },
@@ -1348,8 +1274,8 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "SMX1",
-    "teacherId": "NACHO",
-    "room": "AULA 7",
+    "teacherId": "PR001002",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0222"
   },
@@ -1358,8 +1284,8 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 7",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0221"
   },
@@ -1368,8 +1294,8 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 7",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0221"
   },
@@ -1378,8 +1304,8 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
-    "room": "AULA 7",
+    "teacherId": "ADC_SMX1",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "AC00"
   },
@@ -1388,8 +1314,8 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0223"
   },
@@ -1398,8 +1324,8 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0223"
   },
@@ -1408,8 +1334,8 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0223"
   },
@@ -1418,8 +1344,8 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
-    "room": "AULA 2",
+    "teacherId": "ADC_SMX1",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "AC00"
   },
@@ -1428,8 +1354,8 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
-    "room": "AULA 2",
+    "teacherId": "ADC_SMX1",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "AC00"
   },
@@ -1438,8 +1364,8 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
-    "room": "AULA 2",
+    "teacherId": "ADC_SMX1",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "AC00"
   },
@@ -1448,8 +1374,8 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0223"
   },
@@ -1458,8 +1384,8 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "SMX1",
-    "teacherId": "AMPARO",
-    "room": "AULA 2",
+    "teacherId": "PR001003",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0156"
   },
@@ -1468,9 +1394,9 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "SMX1",
-    "teacherId": "CENTRE_SMX1",
+    "teacherId": "ADC_SMX1",
     "room": "AULA 2",
-    "trimester": 2,
+    "trimester": 4,
     "subjectId": "AC00"
   },
   {
@@ -1478,7 +1404,7 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "1709"
@@ -1488,7 +1414,7 @@
     "start": "12:40",
     "end": "13:40",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "1709"
@@ -1498,7 +1424,7 @@
     "start": "13:40",
     "end": "14:40",
     "groupId": "SMX1",
-    "teacherId": "BEA",
+    "teacherId": "PR001005",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "1709"
@@ -1508,8 +1434,8 @@
     "start": "08:20",
     "end": "09:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0225"
   },
@@ -1518,8 +1444,8 @@
     "start": "09:20",
     "end": "10:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0225"
   },
@@ -1528,8 +1454,8 @@
     "start": "10:20",
     "end": "11:20",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
     "subjectId": "0225"
   },
@@ -1538,27 +1464,27 @@
     "start": "11:40",
     "end": "12:40",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
-    "subjectId": "MOP01"
+    "subjectId": "OP01"
   },
   {
     "day": 5,
     "start": "12:40",
     "end": "13:40",
     "groupId": "SMX1",
-    "teacherId": "JOAN",
-    "room": "AULA 2",
+    "teacherId": "PR001001",
+    "room": "AULA 4",
     "trimester": 2,
-    "subjectId": "MOP01"
+    "subjectId": "OP01"
   },
   {
     "day": 5,
     "start": "13:40",
     "end": "14:40",
     "groupId": "SMX1",
-    "teacherId": "TUTOR_SMX1",
+    "teacherId": "TUT_SMX1",
     "room": "AULA 2",
     "trimester": 2,
     "subjectId": "Tutoria"
