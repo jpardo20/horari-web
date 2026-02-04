@@ -64,6 +64,10 @@
   const renderBtn = getEl('renderBtn', 'showBtn', 'btnShow', 'btnMostra', '#renderBtn');
   const scheduleOut = getEl('schedule', 'scheduleGrid', 'scheduleTable', '#schedule');
 
+  // Afegit per activar/desactivar els botons Classe/Profe
+  const botoClasse = document.getElementById("botoClasse");
+  const botoProfe = document.getElementById("botoProfe")
+
   // Si algun element clau no existeix, no petem: mostrem avis a consola.
   function assertDom() {
     const missing = [];
@@ -263,7 +267,11 @@ function colorForSubjectItem(s){
     if (!entitySelect) return;
 
     if (MODE === "class") {
-      if (selectLabel) selectLabel.textContent = "Classe:";
+      if (selectLabel) {
+          selectLabel.textContent = "Classe:";
+          botoClasse.classList.add("selected");
+          botoProfe.classList.remove("selected");
+        }
       const groups = getAvailableGroups();
       setSelectOptions(entitySelect, groups, {
         placeholder: "— Selecciona —",
@@ -271,7 +279,11 @@ function colorForSubjectItem(s){
         labelFn: g => g
       });
     } else {
-      if (selectLabel) selectLabel.textContent = "Professor:";
+      if (selectLabel) {
+        selectLabel.textContent = "Professor:";
+        botoProfe.classList.add("selected");
+        botoClasse.classList.remove("selected");
+    }
       const teachers = getAvailableTeachers();
       setSelectOptions(entitySelect, teachers, {
         placeholder: "— Selecciona —",
