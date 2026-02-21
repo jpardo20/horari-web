@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin · Graella · Horari Web</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Admin · Graella</h1>
+      <nav class="topbar__nav">
+        <a href="index.html">← Tornar a l’horari</a>
+        <a href="admin-sessions.html">Admin taula →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Carrega de dades</h2>
+      <p class="muted">
+        Editor visual (drag &amp; drop) sobre franges fixes.
+        Només es permet editar <code>day</code>, <code>start</code> i <code>end</code>.
+      </p>
+
+      <div class="actions">
+        <button id="btnLoadServer" type="button">Carrega del servidor</button>
+        <button id="btnExport" type="button" disabled>Exporta JSON</button>
+      </div>
+
+      <pre id="status" class="status" aria-live="polite">Llest.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>Filtres</h2>
+      <div class="actions">
+        <select id="filterTrimester" disabled>
+          <option value="">Tots els trimestres</option>
+        </select>
+        <select id="filterGroup" disabled>
+          <option value="">Tots els grups</option>
+        </select>
+        <select id="filterTeacher" disabled>
+          <option value="">Tots els professors</option>
+        </select>
+        <button id="btnApplyFilters" type="button" disabled>Aplica filtres</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Graella</h2>
+      <div id="grid" class="summary muted">Encara no s’han carregat dades.</div>
+    </section>
+  </main>
+
+  <script type="module" src="js/admin/admin-grid.js"></script>
+</body>
+</html>
