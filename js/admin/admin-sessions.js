@@ -1,15 +1,11 @@
 /**
  * Admin Sessions (scaffold)
- * - Loads JSON data from /data
+ * - Uses shared core loader
  * - Shows a small summary
  * - Next steps: filters, table editor, validation, export
  */
 
-async function fetchJson(path) {
-  const res = await fetch(path, { cache: "no-store" });
-  if (!res.ok) throw new Error(`HTTP ${res.status} loading ${path}`);
-  return res.json();
-}
+import { loadData } from "../core/data.js";
 
 function $(id) {
   return document.getElementById(id);
@@ -40,25 +36,9 @@ function renderSummary({ sessions, professors, assignatures, rols, descansos }) 
 
 async function loadFromServer() {
   setStatus("Carregant dades del servidor...");
-
-  const paths = {
-    sessions: "data/sessions.json",
-    professors: "data/professors.json",
-    assignatures: "data/assignatures.json",
-    rols: "data/rols.json",
-    descansos: "data/descansos.json",
-  };
-
   try {
-    const [sessions, professors, assignatures, rols, descansos] = await Promise.all([
-      fetchJson(paths.sessions),
-      fetchJson(paths.professors),
-      fetchJson(paths.assignatures),
-      fetchJson(paths.rols),
-      fetchJson(paths.descansos),
-    ]);
-
-    renderSummary({ sessions, professors, assignatures, rols, descansos });
+    const data = await loadData("data");
+    renderSummary(data);
     setStatus("✅ Dades carregades correctament.");
   } catch (err) {
     console.error(err);
