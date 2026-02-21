@@ -1,0 +1,32 @@
+name: Validate JSON (data)
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files under data/
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Validating JSON files under ./data ..."
+          shopt -s nullglob
+          files=(data/**/*.json data/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No JSON files found under data/. Skipping."
+            exit 0
+          fi
+
+          for f in "${files[@]}"; do
+            echo "✔ Checking $f"
+            python -m json.tool "$f" > /dev/null
+          done
+
+          echo "✅ All JSON files are valid."
