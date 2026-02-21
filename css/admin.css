@@ -43,3 +43,33 @@
 .summary {
   padding: .5rem 0;
 }
+
+
+.admin-grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-grid-table th,
+.admin-grid-table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  vertical-align: top;
+}
+
+.admin-grid-table th {
+  background: #f5f5f5;
+  text-align: center;
+}
+
+.grid-cell {
+  min-height: 60px;
+}
+
+.session-block {
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  padding: 4px;
+  border-radius: 4px;
+}
