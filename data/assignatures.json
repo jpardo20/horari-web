@@ -1,142 +1,37 @@
 [
-  {
-    "subjectId": "0156",
-    "name": "Anglès professional"
-  },
-  {
-    "subjectId": "0179",
-    "name": "Anglès professional"
-  },
-  {
-    "subjectId": "0373",
-    "name": "Llenguatges de marques i sistemes de gestió d’informació"
-  },
-  {
-    "subjectId": "0483",
-    "name": "Sistemes informàtics"
-  },
-  {
-    "subjectId": "0484",
-    "name": "Bases de dades"
-  },
-  {
-    "subjectId": "0485",
-    "name": "Programació"
-  },
-  {
-    "subjectId": "0486",
-    "name": "Accés a dades"
-  },
-  {
-    "subjectId": "0487",
-    "name": "Entorns de desenvolupament"
-  },
-  {
-    "subjectId": "0488",
-    "name": "Desenvolupament d’interfícies"
-  },
-  {
-    "subjectId": "0489",
-    "name": "Programació multimèdia i dispositius mòbils"
-  },
-  {
-    "subjectId": "0490",
-    "name": "Programació de serveis i processos"
-  },
-  {
-    "subjectId": "0491",
-    "name": "Sistemes de gestió empresarial"
-  },
-  {
-    "subjectId": "0492",
-    "name": "Projecte intermodular de DAM"
-  },
-  {
-    "subjectId": "0221",
-    "name": "Muntatge i manteniment d’equips"
-  },
-  {
-    "subjectId": "0222",
-    "name": "Sistemes operatius monolloc"
-  },
-  {
-    "subjectId": "0223",
-    "name": "Aplicacions ofimàtiques"
-  },
-  {
-    "subjectId": "0225",
-    "name": "Xarxes locals"
-  },
-  {
-    "subjectId": "0369",
-    "name": "Implantació de sistemes operatius"
-  },
-  {
-    "subjectId": "0371",
-    "name": "Administració de sistemes operatius"
-  },
-  {
-    "subjectId": "0372",
-    "name": "Serveis de xarxa"
-  },
-  {
-    "subjectId": "0374",
-    "name": "Aplicacions web"
-  },
-  {
-    "subjectId": "0375",
-    "name": "Seguretat i alta disponibilitat"
-  },
-  {
-    "subjectId": "1664",
-    "name": "Digitalització aplicada als sectors productius"
-  },
-  {
-    "subjectId": "1665",
-    "name": "Digitalització aplicada als sectors productius"
-  },
-  {
-    "subjectId": "1708",
-    "name": "Sostenibilitat aplicada al sistema productiu"
-  },
-  {
-    "subjectId": "1709",
-    "name": "Itinerari personal per a l’ocupabilitat I"
-  },
-  {
-    "subjectId": "1710",
-    "name": "Itinerari personal per a l’ocupabilitat II"
-  },
-  {
-    "subjectId": "FCT",
-    "name": "Estada a l’empresa"
-  },
-  {
-    "subjectId": "T001",
-    "name": "Tutoria"
-  },
-  {
-    "subjectId": "AC00",
-    "name": "Activitat de centre"
-  },
-  {
-    "subjectId": "GAME01",
-    "name": "Game design"
-  },
-  {
-    "subjectId": "GAME02",
-    "name": "Disseny 2D i 3D"
-  },
-  {
-    "subjectId": "GAME03",
-    "name": "Programació de videojocs 2D i 3D"
-  },
-  {
-    "subjectId": "MOP01",
-    "name": "Informàtica aplicada a Sistemes Electrònics (Robòtica) i Programació en Python"
-  },
-  {
-    "subjectId": "MOP02",
-    "name": "Programació en Python i Cibersguretat"
-  }
+  {"subjectId": "0156", "name": "Anglès professional"},
+  {"subjectId": "0179", "name": "Anglès professional"},
+  {"subjectId": "0373", "name": "Llenguatges de marques i sistemes de gestió d’informació"},
+  {"subjectId": "0483", "name": "Sistemes informàtics"},
+  {"subjectId": "0484", "name": "Bases de dades"},
+  {"subjectId": "0485", "name": "Programació"},
+  {"subjectId": "0486", "name": "Accés a dades"},
+  {"subjectId": "0487", "name": "Entorns de desenvolupament"},
+  {"subjectId": "0488", "name": "Desenvolupament d’interfícies"},
+  {"subjectId": "0489", "name": "Programació multimèdia i dispositius mòbils"},
+  {"subjectId": "0490", "name": "Programació de serveis i processos"},
+  {"subjectId": "0491", "name": "Sistemes de gestió empresarial"},
+  {"subjectId": "0492", "name": "Projecte intermodular de DAM"},
+  {"subjectId": "0221", "name": "Muntatge i manteniment d’equips"},
+  {"subjectId": "0222", "name": "Sistemes operatius monolloc"},
+  {"subjectId": "0223", "name": "Aplicacions ofimàtiques"},
+  {"subjectId": "0225", "name": "Xarxes locals"},
+  {"subjectId": "0369", "name": "Implantació de sistemes operatius"},
+  {"subjectId": "0371", "name": "Administració de sistemes operatius"},
+  {"subjectId": "0372", "name": "Serveis de xarxa"},
+  {"subjectId": "0374", "name": "Aplicacions web"},
+  {"subjectId": "0375", "name": "Seguretat i alta disponibilitat"},
+  {"subjectId": "1664", "name": "Digitalització aplicada als sectors productius"},
+  {"subjectId": "1665", "name": "Digitalització aplicada als sectors productius"},
+  {"subjectId": "1708", "name": "Sostenibilitat aplicada al sistema productiu"},
+  {"subjectId": "1709", "name": "Itinerari personal per a l’ocupabilitat I"},
+  {"subjectId": "1710", "name": "Itinerari personal per a l’ocupabilitat II"},
+  {"subjectId": "FCT1", "name": "Estada a l’empresa"},
+  {"subjectId": "T001", "name": "Tutoria"},
+  {"subjectId": "AC00", "name": "Activitat de centre"},
+  {"subjectId": "GA01", "name": "Game design"},
+  {"subjectId": "GA02", "name": "Disseny 2D i 3D"},
+  {"subjectId": "GA03", "name": "Programació de videojocs 2D i 3D"},
+  {"subjectId": "OP01", "name": "Informàtica aplicada a Sistemes Electrònics (Robòtica) i Programació en Python"},
+  {"subjectId": "OP02", "name": "Programació en Python i Cibersguretat"}
 ]

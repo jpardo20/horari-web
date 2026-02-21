@@ -1,422 +1,61 @@
-[
-  {
-    "subjectId": "0483",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 165
-  },
-  {
-    "subjectId": "0484",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0485",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 264
-  },
-  {
-    "subjectId": "0487",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 99
-  },
-  {
-    "subjectId": "0486",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 132
-  },
-  {
-    "subjectId": "0488",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 119
-  },
-  {
-    "subjectId": "0489",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 132
-  },
-  {
-    "subjectId": "0490",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 99
-  },
-  {
-    "subjectId": "0491",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 99
-  },
-  {
-    "subjectId": "0492",
-    "cicle": "DAM",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0485",
-    "cicle": "DAM",
-    "perfil": "VIDEOJOCS",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 231
-  },
-  {
-    "subjectId": "GAME01",
-    "cicle": "DAM",
-    "perfil": "VIDEOJOCS",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 33
-  },
-  {
-    "subjectId": "GAME02",
-    "cicle": "DAM",
-    "perfil": "VIDEOJOCS",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 66
-  },
-  {
-    "subjectId": "GAME03",
-    "cicle": "DAM",
-    "perfil": "VIDEOJOCS",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 110
-  },
-  {
-    "subjectId": "0221",
-    "cicle": "SMX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0222",
-    "cicle": "SMX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0223",
-    "cicle": "SMX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 132
-  },
-  {
-    "subjectId": "0225",
-    "cicle": "SMX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 165
-  },
-  {
-    "subjectId": "0369",
-    "cicle": "ASIX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0371",
-    "cicle": "ASIX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 198
-  },
-  {
-    "subjectId": "0372",
-    "cicle": "ASIX",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 165
-  },
-  {
-    "subjectId": "0375",
-    "cicle": "ASIX",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 120
-  },
-  {
-    "subjectId": "0374",
-    "cicle": "DAW",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 165
-  },
-  {
-    "subjectId": "1665",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      1,
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 66
-  },
-  {
-    "subjectId": "1708",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      1,
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 33
-  },
-  {
-    "subjectId": "1709",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      1
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 90
-  },
-  {
-    "subjectId": "1710",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 90
-  },
-  {
-    "subjectId": "T001",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      1,
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 30
-  },
-  {
-    "subjectId": "AC00",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      1,
-      2
-    ],
-    "trimestres": [
-      1,
-      2,
-      3
-    ],
-    "horesTotals": 20
-  },
-  {
-    "subjectId": "FCT",
-    "cicle": "ALL",
-    "perfil": "GENERAL",
-    "cursos": [
-      2
-    ],
-    "trimestres": [
-      3
-    ],
-    "horesTotals": 383
-  }
+[ { "subjectId": "0483", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 165 },
+  { "subjectId": "0484", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 198 },
+  { "subjectId": "0485", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 264 },
+  { "subjectId": "0487", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 99 },
+  { "subjectId": "0486", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 132 },
+  { "subjectId": "0488", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 119 },
+  { "subjectId": "0489", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 132 },
+  { "subjectId": "0490", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 99 },
+  { "subjectId": "0491", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 99 },
+  { "subjectId": "0492", "cicle": "DAM", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [3],  "horesTotals": 198 },
+  { "subjectId": "0485", "cicle": "DAM","perfil": "VIDEOJOCS",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 231 },
+  { "subjectId": "GAME01", "cicle": "DAM","perfil": "VIDEOJOCS",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 33 },
+  { "subjectId": "GAME02", "cicle": "DAM","perfil": "VIDEOJOCS",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 66 },
+  { "subjectId": "GAME03", "cicle": "DAM","perfil": "VIDEOJOCS",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 110 },
+  { "subjectId": "0221", "cicle": "SMX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 198 },
+  { "subjectId": "0222", "cicle": "SMX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 198 },
+  { "subjectId": "0223", "cicle": "SMX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 132 },
+  { "subjectId": "0225", "cicle": "SMX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 165 },
+  { "subjectId": "0369", "cicle": "ASIX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 198 },
+  { "subjectId": "0371", "cicle": "ASIX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 198 },
+  { "subjectId": "0372", "cicle": "ASIX", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 165 },
+  { "subjectId": "0375", "cicle": "ASIX", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 120 },
+  { "subjectId": "0374", "cicle": "DAW", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 165 },
+  { "subjectId": "1665", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [1,2], "trimestres": [1,2,3], "horesTotals": 66 },
+  { "subjectId": "1708", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [1,2], "trimestres": [1,2,3], "horesTotals": 33 },
+  { "subjectId": "1709", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [1], "trimestres": [1,2,3], "horesTotals": 90 },
+  { "subjectId": "1710", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [1,2,3], "horesTotals": 90 },
+  { "subjectId": "T001", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [1,2], "trimestres": [1,2,3], "horesTotals": 30 },
+  { "subjectId": "AC00", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [1,2], "trimestres": [1,2,3], "horesTotals": 20 },
+  { "subjectId": "FCT1", "cicle": "ALL", "perfil": "GENERAL",
+    "cursos": [2], "trimestres": [3],  "horesTotals": 383 }
 ]

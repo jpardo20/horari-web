@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Horari</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    
+</head>
+
+<body>
+    <header class="brand">
+        <div class="brand__text">
+            <h1 class="brand__title">Horari</h1>
+            <p id="brand-subtitle" class="brand__subtitle">Curs 2025/2026 · —</p>
+        </div>
+        <img class="brand__logo" src="img/logo_VERT.png" alt="DIGITECH">
+    </header>
+
+    <div class="picker">
+        <div class="buttons" id="modeButtons">
+            <button class="btn selected" data-mode="class">Per classe</button>
+            <button class="btn" data-mode="teacher">Per professor</button>
+        </div>
+
+        <div class="controls">
+            <label id="selectLabel" for="entitySelect">Classe:</label>
+            <select id="entitySelect"></select>
+            <label for="trimSelect">Trimestre:</label>
+            <select id="trimSelect">
+                <option value="1">1r</option>
+                <option value="2">2n</option>
+                <option value="3">3r</option>
+            </select>
+            <button class="btn" id="renderBtn">Mostra</button>
+        </div>
+    </div>
+
+    <div id="schedule"></div>
+    <!-- <div class="legend muted">
+        Consell: mantén <code>sessions.json</code> com a font única i edita només aquest fitxer.
+        Els colors provenen de <code>colors.json</code> (clau: <em>subject</em>).
+    </div> -->
+
+    <script src="js/app.js"></script>
+    <script src="js/highlight.js"></script>
+</body>
+
+</html>
