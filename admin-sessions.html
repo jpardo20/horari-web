@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin · Sessions · Horari Web</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Admin · Sessions</h1>
+      <nav class="topbar__nav">
+        <a href="index.html">← Tornar a l’horari</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Carrega de dades</h2>
+      <p class="muted">
+        Aquesta pàgina permetrà editar sessions i exportar el <code>sessions.json</code>.
+        (En aquesta primera versió: només lectura i resum.)
+      </p>
+
+      <div class="actions">
+        <button id="btnLoadServer" type="button">Carrega del servidor</button>
+      </div>
+
+      <pre id="status" class="status" aria-live="polite">Llest.</pre>
+    </section>
+
+    <section class="panel">
+      <h2>Resum</h2>
+      <div id="summary" class="summary muted">Encara no s’han carregat dades.</div>
+    </section>
+  </main>
+
+  <script src="js/admin/admin-sessions.js" defer></script>
+</body>
+</html>
