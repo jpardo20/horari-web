@@ -85,25 +85,103 @@ function getFilteredSessions() {
  * - blocs de sessions amb data-id, draggable, etc.
  */
 function renderGrid(sessions) {
+  const gridEl = $("grid");
+
   if (!DATA) {
-    $("grid").textContent = "Encara no s’han carregat dades.";
-    $("grid").classList.add("muted");
+    gridEl.textContent = "Encara no s’han carregat dades.";
+    gridEl.classList.add("muted");
     return;
   }
 
-  const lines = [
-    `Sessions visibles: ${sessions.length}`,
-    "",
-    "Exemple (primeres 10):",
-    ...sessions.slice(0, 10).map((s) => {
-      const subj = MAPS.subjectsById.get(s.subjectId)?.name ?? s.subjectId;
-      const te = MAPS.teachersById.get(s.teacherId)?.name ?? s.teacherId;
-      return `- ${formatDay(s.day)} ${s.start}-${s.end} · ${subj} · ${te} · ${s.room ?? ""}`;
-    }),
-  ];
+  gridEl.classList.remove("muted");
+  gridEl.innerHTML = "";
 
-  $("grid").classList.remove("muted");
-  $("grid").textContent = lines.join("\n");
+  // 1️⃣ dies fixos (1–5)
+  const DAYS = [1, 2, 3, 4, 5];
+
+  // 2️⃣ franges úniques ordenades
+  const slots = Array.from(
+    new Set(sessions.map((s) => `${s.start}|${s.end}`))
+  )
+    .map((str) => {
+      const [start, end] = str.split("|");
+      return { start, end };
+    })
+    .sort((a, b) => a.start.localeCompare(b.start));
+
+  // 3️⃣ taula
+  const table = document.createElement("table");
+  table.className = "admin-grid-table";
+
+  // THEAD
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+
+  const thTime = document.createElement("th");
+  thTime.textContent = "Hora";
+  headRow.appendChild(thTime);
+
+  for (const day of DAYS) {
+    const th = document.createElement("th");
+    th.textContent = formatDay(day);
+    headRow.appendChild(th);
+  }
+
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  // TBODY
+  const tbody = document.createElement("tbody");
+
+  for (const slot of slots) {
+    const tr = document.createElement("tr");
+
+    // Columna hora
+    const tdTime = document.createElement("td");
+    tdTime.textContent = `${slot.start} - ${slot.end}`;
+    tr.appendChild(tdTime);
+
+    // Columnes dies
+    for (const day of DAYS) {
+      const td = document.createElement("td");
+      td.dataset.day = day;
+      td.dataset.start = slot.start;
+      td.dataset.end = slot.end;
+      td.className = "grid-cell";
+
+      // buscar sessió que encaixi exactament
+      const session = sessions.find(
+        (s) =>
+          s.day === day &&
+          s.start === slot.start &&
+          s.end === slot.end
+      );
+
+      if (session) {
+        const div = document.createElement("div");
+        div.className = "session-block";
+        div.dataset.id = session._id;
+
+        const subj = MAPS.subjectsById.get(session.subjectId)?.name ?? "";
+        const teacher = MAPS.teachersById.get(session.teacherId)?.name ?? "";
+
+        div.innerHTML = `
+          <strong>${subj}</strong><br>
+          <small>${teacher}</small><br>
+          <small>${session.room ?? ""}</small>
+        `;
+
+        td.appendChild(div);
+      }
+
+      tr.appendChild(td);
+    }
+
+    tbody.appendChild(tr);
+  }
+
+  table.appendChild(tbody);
+  gridEl.appendChild(table);
 }
 
 function applyFiltersAndRender() {
