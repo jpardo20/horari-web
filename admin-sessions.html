@@ -34,8 +34,25 @@
     </section>
 
     <section class="panel">
-      <h2>Resum</h2>
-      <div id="summary" class="summary muted">Encara no s’han carregat dades.</div>
+      <h2>Filtres</h2>
+      <div class="actions">
+        <select id="filterTrimester">
+          <option value="">Tots els trimestres</option>
+        </select>
+        <select id="filterGroup">
+          <option value="">Tots els grups</option>
+        </select>
+        <select id="filterTeacher">
+          <option value="">Tots els professors</option>
+        </select>
+        <button id="btnApplyFilters" type="button">Aplica filtres</button>
+        <button id="btnExport" type="button">Exporta JSON</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Sessions</h2>
+      <div id="sessionsTable" class="summary muted">Encara no s’han carregat dades.</div>
     </section>
   </main>
 
