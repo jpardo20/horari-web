@@ -2,6 +2,7 @@ import { loadData } from "../core/data.js";
 import { filterSessions, uniqueSorted } from "../core/filters.js";
 import { buildMapByKey } from "../core/lookup.js";
 import { formatDay } from "../core/format.js";
+import { renderTimetable } from "../core/renderTimetable.js";
 
 import {
   initSessions,
@@ -85,121 +86,87 @@ function getFilteredSessions() {
 function renderGrid(sessions) {
   const gridEl = $("grid");
 
-  if (!DATA) {
-    gridEl.textContent = "Encara no s’han carregat dades.";
+  if (!sessions.length) {
     gridEl.classList.add("muted");
+    gridEl.innerHTML = "No hi ha sessions per a aquest filtre.";
     return;
   }
 
   gridEl.classList.remove("muted");
-  gridEl.innerHTML = "";
 
-  const DAYS = [1, 2, 3, 4, 5];
+  // Render compartit (mateix layout que la vista pública)
+  renderTimetable(gridEl, sessions, {
+    days: [1, 2, 3, 4, 5],
+    dayLabels: new Map([
+      [1, "Dilluns"],
+      [2, "Dimarts"],
+      [3, "Dimecres"],
+      [4, "Dijous"],
+      [5, "Divendres"]
+    ]),
+    breaks: DATA.descansos || [],
+    sessionCardHtml: (s) => {
+      const subj =
+        MAPS.subjectsById[s.subjectId]?.name ?? s.subjectId ?? "";
+      const teacher =
+        MAPS.teachersById[s.teacherId]?.name ?? s.teacherId ?? "";
 
-  const slots = Array.from(
-    new Set(sessions.map((s) => `${s.start}|${s.end}`))
-  )
-    .map((str) => {
-      const [start, end] = str.split("|");
-      return { start, end };
-    })
-    .sort((a, b) => a.start.localeCompare(b.start));
+      return `
+        <div style="
+          border:1px solid rgba(0,0,0,.12);
+          border-radius:10px;
+          padding:10px 12px;
+          background:#fff;
+          color:#1f2937;
+          line-height:1.2;
+        ">
+          <div style="font-weight:700; margin-bottom:4px;">
+            ${subj}
+          </div>
+          <div style="opacity:.85; font-size:0.95em;">
+            ${teacher}
+          </div>
+        </div>
+      `;
+    },
+    sessionIdFn: (s) => s._id
+  });
 
-  const table = document.createElement("table");
-  table.className = "admin-grid-table";
+  wireDnD();
+}
 
-  const thead = document.createElement("thead");
-  const headRow = document.createElement("tr");
+function wireDnD() {
+  // Sessions arrossegables
+  document.querySelectorAll("#grid .session-wrapper[data-id]").forEach((el) => {
+    el.draggable = true;
 
-  const thTime = document.createElement("th");
-  thTime.textContent = "Hora";
-  headRow.appendChild(thTime);
+    el.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", el.dataset.id);
+    });
+  });
 
-  for (const day of DAYS) {
-    const th = document.createElement("th");
-    th.textContent = formatDay(day);
-    headRow.appendChild(th);
-  }
+  // Cel·les destí
+  document.querySelectorAll("#grid .cell").forEach((cell) => {
+    cell.addEventListener("dragover", (e) => e.preventDefault());
 
-  thead.appendChild(headRow);
-  table.appendChild(thead);
-
-  const tbody = document.createElement("tbody");
-
-  for (const slot of slots) {
-    const tr = document.createElement("tr");
-
-    const tdTime = document.createElement("td");
-    tdTime.textContent = `${slot.start} - ${slot.end}`;
-    tr.appendChild(tdTime);
-
-    for (const day of DAYS) {
-      const td = document.createElement("td");
-      td.dataset.day = day;
-      td.dataset.start = slot.start;
-      td.dataset.end = slot.end;
-      td.className = "grid-cell";
-
-      td.addEventListener("dragover", (e) => {
-        e.preventDefault();
-      });
-
-      td.addEventListener("drop", (e) => {
-        e.preventDefault();
-
-        const sessionId = e.dataTransfer.getData("text/plain");
-        const newDay = Number(td.dataset.day);
-        const newStart = td.dataset.start;
-        const newEnd = td.dataset.end;
-
-        try {
-          moveSession(sessionId, newDay, newStart, newEnd);
-          applyFiltersAndRender();
-          setStatus("✅ Sessió moguda correctament.");
-        } catch (err) {
-          setStatus("❌ Error: " + err.message);
-        }
-      });
-
-      const session = sessions.find(
-        (s) =>
-          Number(s.day)  === day &&
-          s.start === slot.start &&
-          s.end === slot.end
-      );
-
-      if (session) {
-        const div = document.createElement("div");
-        div.className = "session-block";
-        div.dataset.id = session._id;
-        div.draggable = true;
-
-        div.addEventListener("dragstart", (e) => {
-          e.dataTransfer.setData("text/plain", session._id);
-        });
-
-        const subj =
-          MAPS.subjectsById[session.subjectId]?.name ?? "";
-        const teacher =
-          MAPS.teachersById[session.teacherId]?.name ?? "";
-
-        div.innerHTML = `
-          <strong>${subj}</strong><br>
-          <small>${teacher}</small><br>
-          <small>${session.room ?? ""}</small>
-        `;
-
-        td.appendChild(div);
+    cell.addEventListener("drop", (e) => {
+      e.preventDefault();
+        console.log("DROP DETECTAT");
+      const id = e.dataTransfer.getData("text/plain");
+        console.log("ID: ", id);
+      const newDay = Number(cell.dataset.day);
+      const newStart = cell.dataset.start;
+      const newEnd = cell.dataset.end;
+        console.log("DESTÍ:", newDay, newStart, newEnd);
+      try {
+        moveSession(id, newDay, newStart, newEnd);
+        applyFiltersAndRender();
+        setStatus("✅ Sessió moguda correctament.");
+      } catch (err) {
+        setStatus("❌ Error: " + err.message);
       }
-
-      tr.appendChild(td);
-    }
-
-    tbody.appendChild(tr);
-  }
-
-  table.appendChild(tbody);
-  gridEl.appendChild(table);
+    });
+  });
 }
 
 function applyFiltersAndRender() {
@@ -220,11 +187,24 @@ function exportJson() {
   URL.revokeObjectURL(a.href);
 }
 
+async function loadBreaks() {
+  try {
+    const res = await fetch("data/descansos.json", { cache: "no-store" });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
 async function loadFromServer() {
   setStatus("Carregant dades...");
   try {
     DATA = await loadData("data");
     MAPS = buildMaps(DATA);
+
+    // 🔹 Carreguem descansos
+    DATA.descansos = await loadBreaks();
 
     initSessions(DATA.sessions);
 
