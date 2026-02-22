@@ -63,6 +63,51 @@ export function hasChanges() {
   return dirtyIds.size > 0;
 }
 
+
+/**
+ * Comprova si hi ha solapament amb una altra sessió
+ */
+function hasOverlap(target, others) {
+  return others.some(s =>
+    s._id !== target._id &&
+    s.day === target.day &&
+    s.trimester === target.trimester &&
+    (
+      s.groupId === target.groupId ||
+      s.teacherId === target.teacherId
+    ) &&
+    (
+      target.start < s.end &&
+      target.end > s.start
+    )
+  );
+}
+
+/**
+ * Mou una sessió a una nova franja.
+ */
+export function moveSession(id, newDay, newStart, newEnd) {
+  const session = workingSessions.find(s => s._id === id);
+  if (!session) {
+    throw new Error("Sessió no trobada.");
+  }
+
+  const updated = {
+    ...session,
+    day: newDay,
+    start: newStart,
+    end: newEnd
+  };
+
+  if (hasOverlap(updated, workingSessions)) {
+    throw new Error("Solapament detectat amb una altra sessió.");
+  }
+
+  updateSession(id, "day", newDay);
+  updateSession(id, "start", newStart);
+  updateSession(id, "end", newEnd);
+}
+
 /**
  * Reverteix tots els canvis.
  */
