@@ -1,6 +1,7 @@
 // js/core/renderTimetable.js
-// Motor compartit de render d'horaris (mateix layout que app.js), però parametritzable
-// per poder-se reutilitzar tant a la vista pública com a l'admin.
+// Motor compartit de render d'horaris.
+// No sap com es pinta una sessió.
+// Només construeix layout i delega el contingut.
 
 function escapeHtml(s) {
   return String(s ?? "")
@@ -17,17 +18,16 @@ function parseTime(t) {
 }
 
 function getTimeSlots(filteredSessions) {
-  const slots = new Map(); // key "08:20-09:20" -> {start,end}
+  const slots = new Map();
   for (const s of filteredSessions) {
-    const start = s.start;
-    const end = s.end;
-    if (!start || !end) continue;
-    const key = `${start}-${end}`;
-    if (!slots.has(key)) slots.set(key, { start, end });
+    if (!s.start || !s.end) continue;
+    const key = `${s.start}-${s.end}`;
+    if (!slots.has(key)) {
+      slots.set(key, { start: s.start, end: s.end });
+    }
   }
-  const arr = Array.from(slots.values());
-  arr.sort((a, b) => parseTime(a.start) - parseTime(b.start));
-  return arr;
+  return Array.from(slots.values())
+    .sort((a, b) => parseTime(a.start) - parseTime(b.start));
 }
 
 function breakRowHtml(label = "DESCANS") {
@@ -46,14 +46,14 @@ function breakRowHtml(label = "DESCANS") {
   `;
 }
 
-function shouldShowBreak(breakItem, filteredSessions) {
+function shouldShowBreak(breakItem, sessions) {
   const bStart = parseTime(breakItem.start);
   const bEnd = parseTime(breakItem.end);
 
   let hasBefore = false;
   let hasAfter = false;
 
-  for (const s of filteredSessions) {
+  for (const s of sessions) {
     const sStart = parseTime(s.start);
     const sEnd = parseTime(s.end);
 
@@ -65,7 +65,7 @@ function shouldShowBreak(breakItem, filteredSessions) {
   return false;
 }
 
-function buildRowsWithBreaks(timeSlots, filteredSessions, breaks) {
+function buildRowsWithBreaks(timeSlots, sessions, breaks) {
   const normBreaks = (Array.isArray(breaks) ? breaks : [])
     .filter(b => b && b.start && b.end)
     .slice()
@@ -82,7 +82,7 @@ function buildRowsWithBreaks(timeSlots, filteredSessions, breaks) {
       i++;
     }
 
-    if (shouldShowBreak(b, filteredSessions)) {
+    if (shouldShowBreak(b, sessions)) {
       rows.push({ kind: "break", br: b });
     }
   }
@@ -96,62 +96,73 @@ function buildRowsWithBreaks(timeSlots, filteredSessions, breaks) {
 }
 
 /**
- * Renderitza horari amb el mateix layout que app.js.
+ * Renderitza horari.
  *
- * @param {HTMLElement} container - element on escriure el grid
+ * @param {HTMLElement} container
  * @param {Array} sessions - sessions ja filtrades
  * @param {Object} opts
- * @param {Array<number>} [opts.days=[1,2,3,4,5]]
- * @param {Object|Map} [opts.dayLabels] - map/object day->label (Dilluns...)
- * @param {Array} [opts.breaks=[]] - descansos [{start,end,label}]
- * @param {Function} opts.sessionCardHtml - (s) => html de la targeta (mateix estil que app.js)
- * @param {Function} [opts.sessionIdFn] - (s) => string id (per admin DnD). Si no, no posa data-id.
+ * @param {Array<number>} [opts.days]
+ * @param {Object|Map} [opts.dayLabels]
+ * @param {Array} [opts.breaks]
+ * @param {Function} opts.renderSessionContent - (session) => html
+ * @param {Function} [opts.sessionIdFn] - (session) => id string
  */
-export function renderTimetable(container, sessions, opts) {
+export function renderTimetable(container, sessions, opts = {}) {
   const {
     days = [1, 2, 3, 4, 5],
-    dayLabels = new Map([[1,"Dilluns"],[2,"Dimarts"],[3,"Dimecres"],[4,"Dijous"],[5,"Divendres"]]),
+    dayLabels = new Map([
+      [1,"Dilluns"],
+      [2,"Dimarts"],
+      [3,"Dimecres"],
+      [4,"Dijous"],
+      [5,"Divendres"]
+    ]),
     breaks = [],
-    sessionCardHtml,
+    renderSessionContent,
     sessionIdFn = null
-  } = (opts || {});
+  } = opts;
 
   if (!container) return;
 
   container.innerHTML = "";
 
   if (!Array.isArray(sessions) || sessions.length === 0) {
-    container.innerHTML = `<p style="padding:12px; color:#444;">No hi ha sessions per a aquesta selecció.</p>`;
+    container.innerHTML =
+      `<p style="padding:12px; color:#444;">No hi ha sessions per a aquesta selecció.</p>`;
     return;
   }
 
-  if (typeof sessionCardHtml !== "function") {
-    throw new Error("renderTimetable: cal proporcionar opts.sessionCardHtml(s) => html");
+  if (typeof renderSessionContent !== "function") {
+    throw new Error("renderTimetable: cal proporcionar opts.renderSessionContent(session)");
   }
 
   const slots = getTimeSlots(sessions);
   const rows = buildRowsWithBreaks(slots, sessions, breaks);
 
-  // Index per accés ràpid: key day|start|end -> sessions[]
+  // Index ràpid day|start|end
   const map = new Map();
   for (const s of sessions) {
-    const day = Number(s.day);
-    const key = `${day}|${s.start}|${s.end}`;
+    const key = `${Number(s.day)}|${s.start}|${s.end}`;
     if (!map.has(key)) map.set(key, []);
     map.get(key).push(s);
   }
 
-  const getDayLabel = (d) => {
-    if (dayLabels instanceof Map) return dayLabels.get(d) || "";
-    return dayLabels?.[d] || "";
-  };
+  const getDayLabel = (d) =>
+    dayLabels instanceof Map
+      ? dayLabels.get(d) || ""
+      : dayLabels?.[d] || "";
 
-  // Capçalera
   let html = `
-    <div class="timetable-grid" style="display:grid; grid-template-columns: 110px repeat(5, 1fr); gap:10px; align-items:stretch;">
-      <div class="hdr" style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">Hora</div>
+    <div class="timetable-grid"
+         style="display:grid; grid-template-columns: 110px repeat(${days.length}, 1fr); gap:10px; align-items:stretch;">
+      <div class="hdr"
+           style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        Hora
+      </div>
       ${days.map(d => `
-        <div class="hdr" data-day="${d}" style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        <div class="hdr"
+             data-day="${d}"
+             style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
           ${escapeHtml(getDayLabel(d))}
         </div>
       `).join("")}
@@ -159,25 +170,26 @@ export function renderTimetable(container, sessions, opts) {
 
   for (const row of rows) {
     if (row.kind === "break") {
-      const label = row.br.label || "DESCANS";
       html += `
-        <div class="hdr" data-slot="${escapeHtml(row.br.start)}-${escapeHtml(row.br.end)}" style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        <div class="hdr"
+             style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
           ${escapeHtml(row.br.start)}–<br>${escapeHtml(row.br.end)}
         </div>
-        <div style="grid-column: 2 / span 5;">
-          ${breakRowHtml(label)}
+        <div style="grid-column: 2 / span ${days.length};">
+          ${breakRowHtml(row.br.label || "DESCANS")}
         </div>
       `;
       continue;
     }
 
     const slot = row.slot;
-    const tLabel = `${escapeHtml(slot.start)}–<br>${escapeHtml(slot.end)}`;
     const slotKey = `${slot.start}-${slot.end}`;
 
     html += `
-      <div class="hdr" data-slot="${escapeHtml(slotKey)}" style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        ${tLabel}
+      <div class="hdr"
+           data-slot="${escapeHtml(slotKey)}"
+           style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        ${escapeHtml(slot.start)}–<br>${escapeHtml(slot.end)}
       </div>
     `;
 
@@ -185,25 +197,32 @@ export function renderTimetable(container, sessions, opts) {
       const key = `${d}|${slot.start}|${slot.end}`;
       const cellSessions = map.get(key) || [];
 
-      const cell =
+      const cellContent =
         cellSessions.length
           ? cellSessions.map(s => {
-              const idAttr = sessionIdFn ? ` data-id="${escapeHtml(sessionIdFn(s))}"` : "";
-              // wrapper per poder enganxar DnD sense tocar la targeta original
-              return `<div class="session-wrapper"${idAttr}>${sessionCardHtml(s)}</div>`;
+              const idAttr = sessionIdFn
+                ? ` data-id="${escapeHtml(sessionIdFn(s))}"`
+                : "";
+              return `
+                <div class="session-wrapper"${idAttr}>
+                  ${renderSessionContent(s)}
+                </div>
+              `;
             }).join(`<div style="height:8px;"></div>`)
           : `<div style="padding:10px 12px; color:#999;">—</div>`;
 
       html += `
-        <div
-          class="cell"
-          data-day="${d}"
-          data-start="${escapeHtml(slot.start)}"
-          data-end="${escapeHtml(slot.end)}"
-          data-slot="${escapeHtml(slotKey)}"
-          style="border:1px solid rgba(0,0,0,.12); border-radius:10px; padding:10px; min-height:72px; background:#fff;"
-        >
-          ${cell}
+        <div class="cell"
+             data-day="${d}"
+             data-start="${escapeHtml(slot.start)}"
+             data-end="${escapeHtml(slot.end)}"
+             data-slot="${escapeHtml(slotKey)}"
+             style="border:1px solid rgba(0,0,0,.12);
+                    border-radius:10px;
+                    padding:10px;
+                    min-height:72px;
+                    background:#fff;">
+          ${cellContent}
         </div>
       `;
     }
