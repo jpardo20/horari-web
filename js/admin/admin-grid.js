@@ -3,7 +3,11 @@ import { filterSessions, uniqueSorted } from "../core/filters.js";
 import { buildMapByKey } from "../core/lookup.js";
 import { formatDay } from "../core/format.js";
 
-import { initSessions, getSessions } from "../state/sessionState.js";
+import {
+  initSessions,
+  getSessions,
+  moveSession
+} from "../state/sessionState.js";
 
 let DATA = null;
 let MAPS = null;
@@ -54,7 +58,7 @@ function populateFilters(sessions) {
   }
 
   for (const gid of groups) {
-    const g = MAPS.groupsById.get(gid);
+    const g = MAPS.groupsById[gid];
     const opt = document.createElement("option");
     opt.value = gid;
     opt.textContent = g ? g.name : gid;
@@ -62,7 +66,7 @@ function populateFilters(sessions) {
   }
 
   for (const tid of teachers) {
-    const te = MAPS.teachersById.get(tid);
+    const te = MAPS.teachersById[tid];
     const opt = document.createElement("option");
     opt.value = tid;
     opt.textContent = te ? te.name : tid;
@@ -78,12 +82,6 @@ function getFilteredSessions() {
   });
 }
 
-/**
- * Placeholder de render.
- * Al següent commit:
- * - pintarem la graella real (dies x franges)
- * - blocs de sessions amb data-id, draggable, etc.
- */
 function renderGrid(sessions) {
   const gridEl = $("grid");
 
@@ -96,10 +94,8 @@ function renderGrid(sessions) {
   gridEl.classList.remove("muted");
   gridEl.innerHTML = "";
 
-  // 1️⃣ dies fixos (1–5)
   const DAYS = [1, 2, 3, 4, 5];
 
-  // 2️⃣ franges úniques ordenades
   const slots = Array.from(
     new Set(sessions.map((s) => `${s.start}|${s.end}`))
   )
@@ -109,11 +105,9 @@ function renderGrid(sessions) {
     })
     .sort((a, b) => a.start.localeCompare(b.start));
 
-  // 3️⃣ taula
   const table = document.createElement("table");
   table.className = "admin-grid-table";
 
-  // THEAD
   const thead = document.createElement("thead");
   const headRow = document.createElement("tr");
 
@@ -130,18 +124,15 @@ function renderGrid(sessions) {
   thead.appendChild(headRow);
   table.appendChild(thead);
 
-  // TBODY
   const tbody = document.createElement("tbody");
 
   for (const slot of slots) {
     const tr = document.createElement("tr");
 
-    // Columna hora
     const tdTime = document.createElement("td");
     tdTime.textContent = `${slot.start} - ${slot.end}`;
     tr.appendChild(tdTime);
 
-    // Columnes dies
     for (const day of DAYS) {
       const td = document.createElement("td");
       td.dataset.day = day;
@@ -149,10 +140,30 @@ function renderGrid(sessions) {
       td.dataset.end = slot.end;
       td.className = "grid-cell";
 
-      // buscar sessió que encaixi exactament
+      td.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+
+      td.addEventListener("drop", (e) => {
+        e.preventDefault();
+
+        const sessionId = e.dataTransfer.getData("text/plain");
+        const newDay = Number(td.dataset.day);
+        const newStart = td.dataset.start;
+        const newEnd = td.dataset.end;
+
+        try {
+          moveSession(sessionId, newDay, newStart, newEnd);
+          applyFiltersAndRender();
+          setStatus("✅ Sessió moguda correctament.");
+        } catch (err) {
+          setStatus("❌ Error: " + err.message);
+        }
+      });
+
       const session = sessions.find(
         (s) =>
-          s.day === day &&
+          Number(s.day)  === day &&
           s.start === slot.start &&
           s.end === slot.end
       );
@@ -161,9 +172,16 @@ function renderGrid(sessions) {
         const div = document.createElement("div");
         div.className = "session-block";
         div.dataset.id = session._id;
+        div.draggable = true;
 
-        const subj = MAPS.subjectsById.get(session.subjectId)?.name ?? "";
-        const teacher = MAPS.teachersById.get(session.teacherId)?.name ?? "";
+        div.addEventListener("dragstart", (e) => {
+          e.dataTransfer.setData("text/plain", session._id);
+        });
+
+        const subj =
+          MAPS.subjectsById[session.subjectId]?.name ?? "";
+        const teacher =
+          MAPS.teachersById[session.teacherId]?.name ?? "";
 
         div.innerHTML = `
           <strong>${subj}</strong><br>
