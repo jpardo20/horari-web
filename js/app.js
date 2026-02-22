@@ -1,16 +1,16 @@
 /* ============================================================
- * HORARI - app.js
- * - Compatible amb index.html que fa servir: #entitySelect, #trimSelect, #renderBtn, #schedule
- * - Modes: per classe / per professor (mateix <select>)
- * - Llegeix dades de:
- *    ../data/sessions.json
- *    ../data/professors.json
- *    ../data/rols.json
- *   (amb fallback automàtic si la ruta no existeix)
- * ============================================================ */
+* HORARI - app.js
+* - Compatible amb index.html que fa servir: #entitySelect, #trimSelect, #renderBtn, #schedule
+* - Modes: per classe / per professor (mateix <select>)
+* - Llegeix dades de:
+*    ../data/sessions.json
+*    ../data/professors.json
+*    ../data/rols.json
+*   (amb fallback automàtic si la ruta no existeix)
+* ============================================================ */
 
-(() => {
-    "use strict";
+import { renderTimetable } from "./core/renderTimetable.js";
+
 
     // ---------- Utils DOM ----------
     function qs(sel, root = document) { return root.querySelector(sel); }
@@ -577,4 +577,3 @@
     } else {
         init();
     }
-})();
