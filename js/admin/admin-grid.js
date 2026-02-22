@@ -1,7 +1,6 @@
 import { loadData } from "../core/data.js";
 import { filterSessions, uniqueSorted } from "../core/filters.js";
 import { buildMapByKey } from "../core/lookup.js";
-import { formatDay } from "../core/format.js";
 import { renderTimetable } from "../core/renderTimetable.js";
 
 import {
@@ -23,15 +22,14 @@ function setStatus(msg) {
 
 function buildMaps(data) {
   return {
-    teachersById: buildMapByKey(data.teachers, "_id"),
-    subjectsById: buildMapByKey(data.subjects, "_id"),
-    groupsById: buildMapByKey(data.groups, "_id"),
+    teachersById: buildMapByKey(data.professors ?? [], "id"),
+    subjectsById: buildMapByKey(data.assignatures ?? [], "subjectId"),
+    groupsById: buildMapByKey(data.classes ?? [], "id"),
   };
 }
 
 function enableControls() {
   $("btnExport").disabled = false;
-
   $("filterTrimester").disabled = false;
   $("filterGroup").disabled = false;
   $("filterTeacher").disabled = false;
@@ -94,7 +92,6 @@ function renderGrid(sessions) {
 
   gridEl.classList.remove("muted");
 
-  // Render compartit (mateix layout que la vista pública)
   renderTimetable(gridEl, sessions, {
     days: [1, 2, 3, 4, 5],
     dayLabels: new Map([
@@ -105,10 +102,14 @@ function renderGrid(sessions) {
       [5, "Divendres"]
     ]),
     breaks: DATA.descansos || [],
-    sessionCardHtml: (s) => {
-      const subj =
-        MAPS.subjectsById[s.subjectId]?.name ?? s.subjectId ?? "";
-      const teacher =
+
+    // 🔹 Aquí és l'únic canvi important
+    renderSessionContent: (s) => {
+      const subjectCode = s.subjectId ?? "";
+      const subjectName =
+        MAPS.subjectsById[s.subjectId]?.name ?? subjectCode;
+
+      const teacherName =
         MAPS.teachersById[s.teacherId]?.name ?? s.teacherId ?? "";
 
       return `
@@ -121,14 +122,15 @@ function renderGrid(sessions) {
           line-height:1.2;
         ">
           <div style="font-weight:700; margin-bottom:4px;">
-            ${subj}
+            ${subjectCode} - ${subjectName}
           </div>
           <div style="opacity:.85; font-size:0.95em;">
-            ${teacher}
+            ${teacherName}
           </div>
         </div>
       `;
     },
+
     sessionIdFn: (s) => s._id
   });
 
@@ -136,28 +138,24 @@ function renderGrid(sessions) {
 }
 
 function wireDnD() {
-  // Sessions arrossegables
   document.querySelectorAll("#grid .session-wrapper[data-id]").forEach((el) => {
     el.draggable = true;
-
     el.addEventListener("dragstart", (e) => {
       e.dataTransfer.setData("text/plain", el.dataset.id);
     });
   });
 
-  // Cel·les destí
   document.querySelectorAll("#grid .cell").forEach((cell) => {
     cell.addEventListener("dragover", (e) => e.preventDefault());
 
     cell.addEventListener("drop", (e) => {
       e.preventDefault();
-        console.log("DROP DETECTAT");
+
       const id = e.dataTransfer.getData("text/plain");
-        console.log("ID: ", id);
       const newDay = Number(cell.dataset.day);
       const newStart = cell.dataset.start;
       const newEnd = cell.dataset.end;
-        console.log("DESTÍ:", newDay, newStart, newEnd);
+
       try {
         moveSession(id, newDay, newStart, newEnd);
         applyFiltersAndRender();
@@ -170,8 +168,7 @@ function wireDnD() {
 }
 
 function applyFiltersAndRender() {
-  const sessions = getFilteredSessions();
-  renderGrid(sessions);
+  renderGrid(getFilteredSessions());
 }
 
 function exportJson() {
@@ -183,7 +180,6 @@ function exportJson() {
   a.href = URL.createObjectURL(blob);
   a.download = "sessions.json";
   a.click();
-
   URL.revokeObjectURL(a.href);
 }
 
@@ -203,11 +199,9 @@ async function loadFromServer() {
     DATA = await loadData("data");
     MAPS = buildMaps(DATA);
 
-    // 🔹 Carreguem descansos
     DATA.descansos = await loadBreaks();
 
     initSessions(DATA.sessions);
-
     populateFilters(DATA.sessions);
     enableControls();
 
