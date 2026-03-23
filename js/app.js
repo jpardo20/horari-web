@@ -357,28 +357,20 @@ function sessionCardHtml(s) {
     const subjectCode = s.subjectId ?? "";
     const subjectName = resolveSubjectName(subjectCode);
 
-    // 🎨 Color segons assignatura
     const { bg, border, text } = colorForSubjectItem(s);
 
     return `
-    <div style="
-      border:1px solid ${border};
-      border-radius:10px;
-      padding:10px 12px;
-      background:${bg};
-      color:${text};
-      line-height:1.2;
-    ">
-      <div style="font-weight:700; margin-bottom:4px;">
+    <div class="tt-session"
+         style="--bg:${bg}; --border:${border}; --text:${text};">
+      <div class="tt-session-title">
         ${escapeHtml(subjectCode)} - ${escapeHtml(subjectName)}
       </div>
-      <div style="opacity:.85; font-size:0.95em;">
+      <div class="tt-session-sub">
         ${extra || "—"}
       </div>
     </div>
   `;
 }
-
 
 function renderSchedule() {
     if (!scheduleOut) return;

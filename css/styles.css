@@ -227,3 +227,81 @@ body.embed .brand {
             margin: 8px;
         }
     
+
+
+        /* === Timetable (fase 1 CSS modular) === */
+
+.tt-grid {
+  display: grid;
+  grid-template-columns: 110px repeat(5, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.tt-hdr {
+  background: #0aa;
+  color: #fff;
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tt-cell {
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 72px;
+  background: #fff;
+}
+
+.tt-gap {
+  height: 8px;
+}
+
+.tt-empty-cell {
+  padding: 10px 12px;
+  color: #999;
+}
+
+.tt-empty {
+  padding: 12px;
+  color: #444;
+}
+
+.tt-break-wrapper {
+  grid-column: 2 / span 5;
+}
+
+.tt-break-band {
+  width: 100%;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .5px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: #666;
+  color: #fff;
+  border: 2px dashed rgba(0,0,0,.25);
+}
+
+/* === Session === */
+
+.tt-session {
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 12px;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.2;
+}
+
+.tt-session-title {
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.tt-session-sub {
+  opacity:.85;
+  font-size:0.95em;
+}
