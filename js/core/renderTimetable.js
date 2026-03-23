@@ -1,7 +1,4 @@
 // js/core/renderTimetable.js
-// Motor compartit de render d'horaris.
-// No sap com es pinta una sessió.
-// Només construeix layout i delega el contingut.
 
 function escapeHtml(s) {
   return String(s ?? "")
@@ -32,17 +29,7 @@ function getTimeSlots(filteredSessions) {
 
 function breakRowHtml(label = "DESCANS") {
   return `
-    <div style="
-      width:100%;
-      text-align:center;
-      font-weight:800;
-      letter-spacing:.5px;
-      padding:10px 0;
-      border-radius:10px;
-      background:#666;
-      color:#fff;
-      border:2px dashed rgba(0,0,0,.25);
-    ">${escapeHtml(label)}</div>
+    <div class="tt-break-band">${escapeHtml(label)}</div>
   `;
 }
 
@@ -95,18 +82,6 @@ function buildRowsWithBreaks(timeSlots, sessions, breaks) {
   return rows;
 }
 
-/**
- * Renderitza horari.
- *
- * @param {HTMLElement} container
- * @param {Array} sessions - sessions ja filtrades
- * @param {Object} opts
- * @param {Array<number>} [opts.days]
- * @param {Object|Map} [opts.dayLabels]
- * @param {Array} [opts.breaks]
- * @param {Function} opts.renderSessionContent - (session) => html
- * @param {Function} [opts.sessionIdFn] - (session) => id string
- */
 export function renderTimetable(container, sessions, opts = {}) {
   const {
     days = [1, 2, 3, 4, 5],
@@ -128,7 +103,7 @@ export function renderTimetable(container, sessions, opts = {}) {
 
   if (!Array.isArray(sessions) || sessions.length === 0) {
     container.innerHTML =
-      `<p style="padding:12px; color:#444;">No hi ha sessions per a aquesta selecció.</p>`;
+      `<p class="tt-empty">No hi ha sessions per a aquesta selecció.</p>`;
     return;
   }
 
@@ -139,7 +114,6 @@ export function renderTimetable(container, sessions, opts = {}) {
   const slots = getTimeSlots(sessions);
   const rows = buildRowsWithBreaks(slots, sessions, breaks);
 
-  // Index ràpid day|start|end
   const map = new Map();
   for (const s of sessions) {
     const key = `${Number(s.day)}|${s.start}|${s.end}`;
@@ -153,16 +127,10 @@ export function renderTimetable(container, sessions, opts = {}) {
       : dayLabels?.[d] || "";
 
   let html = `
-    <div class="timetable-grid"
-         style="display:grid; grid-template-columns: 110px repeat(${days.length}, 1fr); gap:10px; align-items:stretch;">
-      <div class="hdr"
-           style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        Hora
-      </div>
+    <div class="tt-grid">
+      <div class="tt-hdr">Hora</div>
       ${days.map(d => `
-        <div class="hdr"
-             data-day="${d}"
-             style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        <div class="tt-hdr" data-day="${d}">
           ${escapeHtml(getDayLabel(d))}
         </div>
       `).join("")}
@@ -171,11 +139,10 @@ export function renderTimetable(container, sessions, opts = {}) {
   for (const row of rows) {
     if (row.kind === "break") {
       html += `
-        <div class="hdr"
-             style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+        <div class="tt-hdr">
           ${escapeHtml(row.br.start)}–<br>${escapeHtml(row.br.end)}
         </div>
-        <div style="grid-column: 2 / span ${days.length};">
+        <div class="tt-break-wrapper">
           ${breakRowHtml(row.br.label || "DESCANS")}
         </div>
       `;
@@ -186,9 +153,7 @@ export function renderTimetable(container, sessions, opts = {}) {
     const slotKey = `${slot.start}-${slot.end}`;
 
     html += `
-      <div class="hdr"
-           data-slot="${escapeHtml(slotKey)}"
-           style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
+      <div class="tt-hdr" data-slot="${escapeHtml(slotKey)}">
         ${escapeHtml(slot.start)}–<br>${escapeHtml(slot.end)}
       </div>
     `;
@@ -208,20 +173,15 @@ export function renderTimetable(container, sessions, opts = {}) {
                   ${renderSessionContent(s)}
                 </div>
               `;
-            }).join(`<div style="height:8px;"></div>`)
-          : `<div style="padding:10px 12px; color:#999;">—</div>`;
+            }).join(`<div class="tt-gap"></div>`)
+          : `<div class="tt-empty-cell">—</div>`;
 
       html += `
-        <div class="cell"
+        <div class="tt-cell"
              data-day="${d}"
              data-start="${escapeHtml(slot.start)}"
              data-end="${escapeHtml(slot.end)}"
-             data-slot="${escapeHtml(slotKey)}"
-             style="border:1px solid rgba(0,0,0,.12);
-                    border-radius:10px;
-                    padding:10px;
-                    min-height:72px;
-                    background:#fff;">
+             data-slot="${escapeHtml(slotKey)}">
           ${cellContent}
         </div>
       `;
