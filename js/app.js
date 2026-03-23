@@ -325,27 +325,7 @@ function rebuildEntitySelect() {
 }
 
 // ---------- Render ----------
-function parseTime(t) {
-    // "08:20" -> minuts des de 00:00
-    const [h, m] = String(t).split(":").map(Number);
-    return (h * 60) + (m || 0);
-}
 
-function getTimeSlots(filteredSessions) {
-    const slots = new Map(); // key "08:20-09:20" -> {start,end}
-    for (const s of filteredSessions) {
-        const start = s.start;
-        const end = s.end;
-        if (!start || !end) continue;
-        const key = `${start}-${end}`;
-        if (!slots.has(key)) {
-            slots.set(key, { start, end });
-        }
-    }
-    const arr = Array.from(slots.values());
-    arr.sort((a, b) => parseTime(a.start) - parseTime(b.start));
-    return arr;
-}
 
 // ✅ FASE 1: eliminem matchTrimester i filterSessions local.
 // Ara usem coreFilterSessions (mateix que admin) directament.
@@ -399,74 +379,6 @@ function sessionCardHtml(s) {
   `;
 }
 
-function breakRowHtml(label = "DESCANS") {
-    return `
-    <div style="
-      width:100%;
-      text-align:center;
-      font-weight:800;
-      letter-spacing:.5px;
-      padding:10px 0;
-      border-radius:10px;
-      background:#666;
-      color:#fff;
-      border:2px dashed rgba(0,0,0,.25);
-    ">${escapeHtml(label)}</div>
-  `;
-}
-
-function shouldShowBreak(breakItem, filteredSessions) {
-    const bStart = parseTime(breakItem.start);
-    const bEnd = parseTime(breakItem.end);
-
-    let hasBefore = false;
-    let hasAfter = false;
-
-    for (const s of filteredSessions) {
-        const sStart = parseTime(s.start);
-        const sEnd = parseTime(s.end);
-
-        if (sEnd <= bStart) hasBefore = true;
-        if (sStart >= bEnd) hasAfter = true;
-
-        if (hasBefore && hasAfter) return true;
-    }
-    return false;
-}
-
-function buildRowsWithBreaks(timeSlots, filteredSessions) {
-    // Normalitzem descansos, ordenats per hora
-    const breaks = (Array.isArray(descansos) ? descansos : [])
-        .filter(b => b && b.start && b.end)
-        .slice()
-        .sort((a, b) => parseTime(a.start) - parseTime(b.start));
-
-    const rows = [];
-    let i = 0;
-
-    for (const b of breaks) {
-        const bStart = parseTime(b.start);
-
-        // Afegim tots els slots que comencen abans del descans
-        while (i < timeSlots.length && parseTime(timeSlots[i].start) < bStart) {
-            rows.push({ kind: "slot", slot: timeSlots[i] });
-            i++;
-        }
-
-        // Afegim el descans només si toca (sessions abans i després)
-        if (shouldShowBreak(b, filteredSessions)) {
-            rows.push({ kind: "break", br: b });
-        }
-    }
-
-    // Resta de slots
-    while (i < timeSlots.length) {
-        rows.push({ kind: "slot", slot: timeSlots[i] });
-        i++;
-    }
-
-    return rows;
-}
 
 function renderSchedule() {
     if (!scheduleOut) return;
@@ -480,74 +392,15 @@ function renderSchedule() {
         return;
     }
 
-    // Detecta si hi ha descans (dia=0) per aquests horaris
-    const slots = getTimeSlots(data);
-    const rows = buildRowsWithBreaks(slots, data);
+// 🆕 FASE 1: deleguem el render al motor compartit
+renderTimetable(scheduleOut, data, {
+    days: [1, 2, 3, 4, 5],
+    dayLabels: DAY_LABELS,
+    breaks: descansos,
+    renderSessionContent: (s) => sessionCardHtml(s)
+});
 
 
-    // Construïm índex per accés ràpid: key day-start-end -> sessions[]
-    const map = new Map();
-    for (const s of data) {
-        const day = Number(s.day);
-        const key = `${day}|${s.start}|${s.end}`;
-        if (!map.has(key)) map.set(key, []);
-        map.get(key).push(s);
-    }
-
-    // Wrapper grid
-    const days = [1, 2, 3, 4, 5];
-
-    // Capçalera
-    let html = `
-      <div style="display:grid; grid-template-columns: 110px repeat(5, 1fr); gap:10px; align-items:stretch;">
-        <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">Hora</div>
-        ${days.map(d => `
-          <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-            ${DAY_LABELS.get(d) || ""}
-          </div>
-        `).join("")}
-    `;
-
-    for (const row of rows) {
-        if (row.kind === "break") {
-            const label = row.br.label || "DESCANS";
-            html += `
-      <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        ${escapeHtml(row.br.start)}–<br>${escapeHtml(row.br.end)}
-      </div>
-      <div style="grid-column: 2 / span 5;">
-        ${breakRowHtml(label)}
-      </div>
-    `;
-            continue;
-        }
-
-        const slot = row.slot;
-        const tLabel = `${escapeHtml(slot.start)}–<br>${escapeHtml(slot.end)}`;
-
-        html += `
-      <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        ${tLabel}
-      </div>
-    `;
-
-        for (const d of days) {
-            const key = `${d}|${slot.start}|${slot.end}`;
-            const cellSessions = map.get(key) || [];
-            const cell = cellSessions.length
-                ? cellSessions.map(sessionCardHtml).join(`<div style="height:8px;"></div>`)
-                : `<div style="padding:10px 12px; color:#999;">—</div>`;
-
-            html += `
-      <div style="border:1px solid rgba(0,0,0,.12); border-radius:10px; padding:10px; min-height:72px; background:#fff;">
-        ${cell}
-      </div>
-    `;
-        }
-    }
-
-    html += `</div>`;
-    scheduleOut.innerHTML = html;
 }
 // ---------- Events ----------
 function setMode(mode) {
