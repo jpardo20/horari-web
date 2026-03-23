@@ -5,6 +5,7 @@ import {
 } from "../components/timetableHeader.js";
 
 import { renderTimetableCell } from "../components/timetableCell.js";
+import { renderTimetableGrid } from "../components/timetableGrid.js";
 
 function escapeHtml(s) {
     return String(s ?? "")
@@ -129,14 +130,13 @@ export function renderTimetable(container, sessions, opts = {}) {
             ? dayLabels.get(d) || ""
             : dayLabels?.[d] || "";
 
-    let html = `
-  <div class="tt-grid">
-    ${renderHeaderTop(days, getDayLabel)}
+    let innerHtml = `
+  ${renderHeaderTop(days, getDayLabel)}
 `;
 
     for (const row of rows) {
         if (row.kind === "break") {
-            html += `
+            innerHtml += `
         <div class="tt-hdr">
           ${escapeHtml(row.br.start)}–<br>${escapeHtml(row.br.end)}
         </div>
@@ -150,13 +150,13 @@ export function renderTimetable(container, sessions, opts = {}) {
         const slot = row.slot;
         const slotKey = `${slot.start}-${slot.end}`;
 
-        html += renderTimeHeader(slot.start, slot.end, slotKey);
+        innerHtml += renderTimeHeader(slot.start, slot.end, slotKey);
 
         for (const d of days) {
             const key = `${d}|${slot.start}|${slot.end}`;
             const cellSessions = map.get(key) || [];
 
-            html += renderTimetableCell({
+            innerHtml += renderTimetableCell({
                 day: d,
                 start: slot.start,
                 end: slot.end,
@@ -168,6 +168,6 @@ export function renderTimetable(container, sessions, opts = {}) {
         }
     }
 
-    html += `</div>`;
-    container.innerHTML = html;
+    innerHtml += `</div>`;
+    container.innerHTML = renderTimetableGrid(innerHtml);
 }
