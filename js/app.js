@@ -480,74 +480,15 @@ function renderSchedule() {
         return;
     }
 
-    // Detecta si hi ha descans (dia=0) per aquests horaris
-    const slots = getTimeSlots(data);
-    const rows = buildRowsWithBreaks(slots, data);
+// 🆕 FASE 1: deleguem el render al motor compartit
+renderTimetable(scheduleOut, data, {
+    days: [1, 2, 3, 4, 5],
+    dayLabels: DAY_LABELS,
+    breaks: descansos,
+    renderSessionContent: (s) => sessionCardHtml(s)
+});
 
 
-    // Construïm índex per accés ràpid: key day-start-end -> sessions[]
-    const map = new Map();
-    for (const s of data) {
-        const day = Number(s.day);
-        const key = `${day}|${s.start}|${s.end}`;
-        if (!map.has(key)) map.set(key, []);
-        map.get(key).push(s);
-    }
-
-    // Wrapper grid
-    const days = [1, 2, 3, 4, 5];
-
-    // Capçalera
-    let html = `
-      <div style="display:grid; grid-template-columns: 110px repeat(5, 1fr); gap:10px; align-items:stretch;">
-        <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">Hora</div>
-        ${days.map(d => `
-          <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-            ${DAY_LABELS.get(d) || ""}
-          </div>
-        `).join("")}
-    `;
-
-    for (const row of rows) {
-        if (row.kind === "break") {
-            const label = row.br.label || "DESCANS";
-            html += `
-      <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        ${escapeHtml(row.br.start)}–<br>${escapeHtml(row.br.end)}
-      </div>
-      <div style="grid-column: 2 / span 5;">
-        ${breakRowHtml(label)}
-      </div>
-    `;
-            continue;
-        }
-
-        const slot = row.slot;
-        const tLabel = `${escapeHtml(slot.start)}–<br>${escapeHtml(slot.end)}`;
-
-        html += `
-      <div style="background:#0aa; color:#fff; font-weight:800; padding:10px; border-radius:10px; text-align:center;">
-        ${tLabel}
-      </div>
-    `;
-
-        for (const d of days) {
-            const key = `${d}|${slot.start}|${slot.end}`;
-            const cellSessions = map.get(key) || [];
-            const cell = cellSessions.length
-                ? cellSessions.map(sessionCardHtml).join(`<div style="height:8px;"></div>`)
-                : `<div style="padding:10px 12px; color:#999;">—</div>`;
-
-            html += `
-      <div style="border:1px solid rgba(0,0,0,.12); border-radius:10px; padding:10px; min-height:72px; background:#fff;">
-        ${cell}
-      </div>
-    `;
-        }
-    }
-
-    html += `</div>`;
-    scheduleOut.innerHTML = html;
 }
 // ---------- Events ----------
 function setMode(mode) {
