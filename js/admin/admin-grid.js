@@ -2,6 +2,7 @@ import { loadData } from "../core/data.js";
 import { filterSessions, uniqueSorted } from "../core/filters.js";
 import { buildMapByKey } from "../core/lookup.js";
 import { renderTimetable } from "../core/renderTimetable.js";
+import { renderSessionCard } from "../components/sessionCard.js";
 
 import {
   initSessions,
@@ -104,32 +105,12 @@ function renderGrid(sessions) {
     breaks: DATA.descansos || [],
 
     // 🔹 Aquí és l'únic canvi important
-    renderSessionContent: (s) => {
-      const subjectCode = s.subjectId ?? "";
-      const subjectName =
-        MAPS.subjectsById[s.subjectId]?.name ?? subjectCode;
-
-      const teacherName =
-        MAPS.teachersById[s.teacherId]?.name ?? s.teacherId ?? "";
-
-      return `
-        <div style="
-          border:1px solid rgba(0,0,0,.12);
-          border-radius:10px;
-          padding:10px 12px;
-          background:#fff;
-          color:#1f2937;
-          line-height:1.2;
-        ">
-          <div style="font-weight:700; margin-bottom:4px;">
-            ${subjectCode} - ${subjectName}
-          </div>
-          <div style="opacity:.85; font-size:0.95em;">
-            ${teacherName}
-          </div>
-        </div>
-      `;
-    },
+    renderSessionContent: (s) => renderSessionCard(s, {
+    resolveTeacherName: (id) =>
+        MAPS.teachersById[id]?.name ?? id,
+    resolveSubjectName: (id) =>
+        MAPS.subjectsById[id]?.name ?? id
+    }),
 
     sessionIdFn: (s) => s._id
   });

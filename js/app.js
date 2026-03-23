@@ -12,7 +12,7 @@
 import { renderTimetable } from "./core/renderTimetable.js";
 // ✅ FASE 1: fem servir el filtre compartit (mateix que admin)
 import { filterSessions as coreFilterSessions } from "./core/filters.js";
-
+import { renderSessionCard } from "./components/sessionCard.js";
 
 // ---------- Utils DOM ----------
 function qs(sel, root = document) { return root.querySelector(sel); }
@@ -349,28 +349,7 @@ function getFilteredSessions() {
     }
 }
 
-function sessionCardHtml(s) {
-    const teacher = escapeHtml(resolveTeacherName(s.teacherId) || "");
-    const room = s.room ? ` · ${escapeHtml(s.room)}` : "";
-    const extra = teacher ? `${teacher}${room}` : `${room}`.replace(/^ · /, "");
 
-    const subjectCode = s.subjectId ?? "";
-    const subjectName = resolveSubjectName(subjectCode);
-
-    const { bg, border, text } = colorForSubjectItem(s);
-
-    return `
-    <div class="tt-session"
-         style="--bg:${bg}; --border:${border}; --text:${text};">
-      <div class="tt-session-title">
-        ${escapeHtml(subjectCode)} - ${escapeHtml(subjectName)}
-      </div>
-      <div class="tt-session-sub">
-        ${extra || "—"}
-      </div>
-    </div>
-  `;
-}
 
 function renderSchedule() {
     if (!scheduleOut) return;
@@ -389,7 +368,10 @@ renderTimetable(scheduleOut, data, {
     days: [1, 2, 3, 4, 5],
     dayLabels: DAY_LABELS,
     breaks: descansos,
-    renderSessionContent: (s) => sessionCardHtml(s)
+    renderSessionContent: (s) => renderSessionCard(s, {
+        resolveTeacherName,
+        resolveSubjectName
+        })
 });
 
 
