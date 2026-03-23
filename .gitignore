@@ -2,3 +2,11 @@
 docs/
 img/*.bak_*
 img/trimestres/
+old/*
+
+# docs externs
+_docs_external/
+
+# temporals
+*.log
+*.tmp
