@@ -372,7 +372,6 @@ function sessionCardHtml(s) {
   `;
 }
 
-
 function renderSchedule() {
     if (!scheduleOut) return;
 

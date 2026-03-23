@@ -1,5 +1,3 @@
-// js/core/renderTimetable.js
-
 function escapeHtml(s) {
   return String(s ?? "")
     .replaceAll("&", "&amp;")
@@ -28,9 +26,7 @@ function getTimeSlots(filteredSessions) {
 }
 
 function breakRowHtml(label = "DESCANS") {
-  return `
-    <div class="tt-break-band">${escapeHtml(label)}</div>
-  `;
+  return `<div class="tt-break-band">${escapeHtml(label)}</div>`;
 }
 
 function shouldShowBreak(breakItem, sessions) {
@@ -102,8 +98,7 @@ export function renderTimetable(container, sessions, opts = {}) {
   container.innerHTML = "";
 
   if (!Array.isArray(sessions) || sessions.length === 0) {
-    container.innerHTML =
-      `<p class="tt-empty">No hi ha sessions per a aquesta selecció.</p>`;
+    container.innerHTML = `<p class="tt-empty">No hi ha sessions per a aquesta selecció.</p>`;
     return;
   }
 
