@@ -325,27 +325,7 @@ function rebuildEntitySelect() {
 }
 
 // ---------- Render ----------
-function parseTime(t) {
-    // "08:20" -> minuts des de 00:00
-    const [h, m] = String(t).split(":").map(Number);
-    return (h * 60) + (m || 0);
-}
 
-function getTimeSlots(filteredSessions) {
-    const slots = new Map(); // key "08:20-09:20" -> {start,end}
-    for (const s of filteredSessions) {
-        const start = s.start;
-        const end = s.end;
-        if (!start || !end) continue;
-        const key = `${start}-${end}`;
-        if (!slots.has(key)) {
-            slots.set(key, { start, end });
-        }
-    }
-    const arr = Array.from(slots.values());
-    arr.sort((a, b) => parseTime(a.start) - parseTime(b.start));
-    return arr;
-}
 
 // ✅ FASE 1: eliminem matchTrimester i filterSessions local.
 // Ara usem coreFilterSessions (mateix que admin) directament.
@@ -399,74 +379,6 @@ function sessionCardHtml(s) {
   `;
 }
 
-function breakRowHtml(label = "DESCANS") {
-    return `
-    <div style="
-      width:100%;
-      text-align:center;
-      font-weight:800;
-      letter-spacing:.5px;
-      padding:10px 0;
-      border-radius:10px;
-      background:#666;
-      color:#fff;
-      border:2px dashed rgba(0,0,0,.25);
-    ">${escapeHtml(label)}</div>
-  `;
-}
-
-function shouldShowBreak(breakItem, filteredSessions) {
-    const bStart = parseTime(breakItem.start);
-    const bEnd = parseTime(breakItem.end);
-
-    let hasBefore = false;
-    let hasAfter = false;
-
-    for (const s of filteredSessions) {
-        const sStart = parseTime(s.start);
-        const sEnd = parseTime(s.end);
-
-        if (sEnd <= bStart) hasBefore = true;
-        if (sStart >= bEnd) hasAfter = true;
-
-        if (hasBefore && hasAfter) return true;
-    }
-    return false;
-}
-
-function buildRowsWithBreaks(timeSlots, filteredSessions) {
-    // Normalitzem descansos, ordenats per hora
-    const breaks = (Array.isArray(descansos) ? descansos : [])
-        .filter(b => b && b.start && b.end)
-        .slice()
-        .sort((a, b) => parseTime(a.start) - parseTime(b.start));
-
-    const rows = [];
-    let i = 0;
-
-    for (const b of breaks) {
-        const bStart = parseTime(b.start);
-
-        // Afegim tots els slots que comencen abans del descans
-        while (i < timeSlots.length && parseTime(timeSlots[i].start) < bStart) {
-            rows.push({ kind: "slot", slot: timeSlots[i] });
-            i++;
-        }
-
-        // Afegim el descans només si toca (sessions abans i després)
-        if (shouldShowBreak(b, filteredSessions)) {
-            rows.push({ kind: "break", br: b });
-        }
-    }
-
-    // Resta de slots
-    while (i < timeSlots.length) {
-        rows.push({ kind: "slot", slot: timeSlots[i] });
-        i++;
-    }
-
-    return rows;
-}
 
 function renderSchedule() {
     if (!scheduleOut) return;
