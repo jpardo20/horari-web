@@ -2,3 +2,16 @@
 docs/
 img/*.bak_*
 img/trimestres/
+old/
+
+# backups
+_backup/
+_historics_js/
+*.zip
+
+# docs externs
+_docs_external/
+
+# temporals
+*.log
+*.tmp
